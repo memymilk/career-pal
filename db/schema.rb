@@ -15,6 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_161357) do
   enable_extension "plpgsql"
 
   create_table "feedbacks", force: :cascade do |t|
+    t.text "answers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "giver_id"
     t.bigint "video_call_id"
     t.datetime "created_at", null: false
