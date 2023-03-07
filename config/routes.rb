@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "profile", to: "pages#profile", as: :profile
+  get "feedback", to: "pages#feedback/:id"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
