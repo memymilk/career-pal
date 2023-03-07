@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_120111) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_161357) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_120111) do
     t.text "answers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "giver_id"
+    t.bigint "receiver_id"
+    t.bigint "video_call_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "written_feedback"
+    t.integer "overall_impression"
+    t.integer "eye_contact"
+    t.integer "background_presentation"
+    t.integer "problem_solving"
+    t.integer "verbal_communication"
+    t.integer "body_language"
+    t.integer "enthusiasm"
+    t.integer "professional_appearance"
+    t.integer "hireability"
+    t.integer "confidence"
+    t.index ["giver_id"], name: "index_feedbacks_on_giver_id"
+    t.index ["receiver_id"], name: "index_feedbacks_on_receiver_id"
+    t.index ["video_call_id"], name: "index_feedbacks_on_video_call_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "question"
+    t.text "answer"
+    t.boolean "question_type"
   end
 
   create_table "users", force: :cascade do |t|

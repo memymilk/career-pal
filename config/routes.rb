@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :feedback
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "profile", to: "pages#profile", as: :profile
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
