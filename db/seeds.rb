@@ -15,7 +15,8 @@ puts "Creating database..."
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     education: Faker::Job.education_level,
-    work_experience: Faker::Job.title
+    work_experience: Faker::Job.title,
+    extra_info: Faker::Quote.famous_last_words
   )
   #What about the 20 photos from unsplash?
   # This is what we had for our angry_cats project.
