@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     resources :feedback, only: %i[new create]
   end
 
-  get "profile", to: "pages#profile", as: :profile
+
 end
