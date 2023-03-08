@@ -8,5 +8,3 @@ class User < ApplicationRecord
   # has_many :feedbacks_as_giver, class_name: "Feedback", foreign_key: :giver_id
   # has_many :feedbacks_as_receiver, class_name: "Feedback", foreign_key: :receiver_id
 end
-
-User.last.video_calls
