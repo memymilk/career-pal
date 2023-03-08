@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :users do
-    resources :video_calls
+    resources :videocalls
   end
 
-  resources :video_calls do
+  resources :videocalls do
     resources :feedbacks, only: %i[new create]
   end
 

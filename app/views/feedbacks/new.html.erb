@@ -1,6 +1,6 @@
 <h2>Great job! Now give feedback to your pal</h2>
 
-<%= simple_form_for [@video_call, @feedback] do |f| %>
+<%= simple_form_for [@videocall, @feedback] do |f| %>
   <div>
     <%= f.input :overall_impression, input_html: { class: 'my-form-class' }, label: 'What was your overall impression?', as: :radio_buttons %>
     <%= f.input_field 1..5, class: 'my-form-class' %>
