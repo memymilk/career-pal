@@ -4,6 +4,9 @@
   <div>
     <%= f.input :overall_impression, input_html: { class: 'my-form-class' }, label: 'What was your overall impression?', as: :radio_buttons %>
     <%= f.input_field 1..5, class: 'my-form-class' %>
+    <%= image_tag "star_filled.svg", class:"" %>
+    <%= image_tag "star_empty.svg", class:"" %>
+
   </div>
   <%= f.input :eye_contact %>
   <%= f.input :background_presentation %>
