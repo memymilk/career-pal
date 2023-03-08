@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.home-hero {
+  overflow: hidden;
+  .bg-circle {
+    width: 150%;
+    height: 150%;
+    background-color: #f00;
+    border-radius: 100%;
+    top: 50%;
+    left: -25%;
+    right: 0;
+    position: relative;
+  }
+}
