@@ -58,23 +58,22 @@
       <br>
 
       <!-- looped card creation //-->
-        <%= @my_array  %>
+      <% @my_array.each do |feedback|  %>
+        <a href="feedbacks/<%= feedback.id %>">
+          <div class="card mb-5 feedback">
+            <div class="card-title ps-4 pe-4 pt-4">
+              <h5 style="margin-bottom:0px!important">
+                <%= feedback.created_at %>
+              </h5>
+            </div>
 
-
-        <div class="card mb-5">
-        <div class="card-title ps-4 pe-4 pt-4 pb-2"><h5>01.02.2023 19:00</h5>
+            <div class="card-text ps-4 pe-4 pb-2">
+              <p style="display:flex;align-items:center">Your pal's overall impression from the call: <span style="margin-bottom:3px" class="ms-2"><%= render "feedbacks/star_rating", amount: feedback.overall_impression %></span></p>
+            </div>
           </div>
-          <div class="card-text ps-4 pe-4 pb-4"> <%= %>
-          </div>
-        </div>
-
-
-
+        </a>
+      <% end %>
       <!-- looped card creation end //-->
-
-
-
-
 
       <!-- end of Tab2: history //-->
 
