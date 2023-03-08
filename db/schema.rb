@@ -16,7 +16,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_161357) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.bigint "giver_id"
-    t.bigint "receiver_id"
     t.bigint "video_call_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_161357) do
     t.integer "hireability"
     t.integer "confidence"
     t.index ["giver_id"], name: "index_feedbacks_on_giver_id"
-    t.index ["receiver_id"], name: "index_feedbacks_on_receiver_id"
     t.index ["video_call_id"], name: "index_feedbacks_on_video_call_id"
   end
 
@@ -72,7 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_161357) do
   end
 
   add_foreign_key "feedbacks", "users", column: "giver_id"
-  add_foreign_key "feedbacks", "users", column: "receiver_id"
   add_foreign_key "video_calls", "users", column: "user_one_id"
   add_foreign_key "video_calls", "users", column: "user_two_id"
 end

@@ -3,3 +3,37 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.profile-container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.profile-tite-edit{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+
+}
+.call-image{
+  height:60px;
+  align-self: center;
+  top:20px;
+}
+
+.space-between{
+  display:flex;
+  justify-content:space-between;
+}
+
+.edit{
+  height:20px;
+}
+
+.flex-end{
+  align-self:flex-end;
+}
+
+.two-px{
+margin-top:2px;
+}
