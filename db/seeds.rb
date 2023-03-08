@@ -1,6 +1,7 @@
 require "faker"
 
 puts "Cleaning database..."
+VideoCall.destroy_all
 Feedback.destroy_all
 User.destroy_all
 
@@ -16,7 +17,13 @@ puts "Creating database..."
     work_experience: Faker::Job.title,
     extra_info: Faker::Quote.famous_last_words
   )
+end
 
+20.times do
+  video_call = VideoCall.create!(
+    user_one_id: User.all.first.id,
+    user_two_id: User.all.last.id
+  )
 end
 
 20.times do
@@ -31,6 +38,8 @@ end
     professional_appearance: Faker::Number.within(range: 1..5),
     hireability: Faker::Number.within(range: 1..5),
     confidence: Faker::Number.within(range: 1..5),
+    giver_id: User.first.id,
+    video_call_id: VideoCall.sample.id,
     written_feedback: Faker::Quote.famous_last_words
   )
 end
