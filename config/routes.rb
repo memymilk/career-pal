@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
   get "profile", to: "pages#profile", as: :profile
   get "feedback", to: "pages#feedback/:id"
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :users do
+    resources :video_call
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+  resources :video_call do
+    resources :feedback, only: %i[new create]
+  end
+
+  get "profile", to: "pages#profile", as: :profile
 end
