@@ -1,3 +1,13 @@
 .readiness-card{
   max-width:290px;
 }
+
+.blog-article-card {
+  .btn-outline-secondary {
+    border: none;
+    padding: 0;
+  }
+  .btn-outline-secondary:hover {
+    background-color: #fff;
+  }
+}

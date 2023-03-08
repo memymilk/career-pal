@@ -29,3 +29,72 @@ $teal-600: #1AA179;
 $teal-700: #13795B;
 $teal-800: #0D503C;
 $teal-900: #06281E;
+
+// BG-PRIMARY
+
+.bg-primary {
+  background-color: $purple;
+}
+.bg-primary-50 {
+  background-color: $purple-50;
+}
+.bg-primary-100 {
+  background-color: $purple-100;
+}
+.bg-primary-200 {
+  background-color: $purple-200;
+}
+.bg-primary-300 {
+  background-color: $purple-300;
+}
+.bg-primary-400 {
+  background-color: $purple-400;
+}
+.bg-primary-500 {
+  background-color: $purple-500;
+}
+.bg-primary-600 {
+  background-color: $purple-600;
+}
+.bg-primary-700 {
+  background-color: $purple-700;
+}
+.bg-primary-900 {
+  background-color: $purple-900;
+}
+
+// BG-SECONDARY
+
+.bg-secondary {
+  background-color: $teal;
+}
+.bg-secondary-100 {
+  background-color: $teal-100;
+}
+.bg-secondary-200 {
+  background-color: $teal-200;
+}
+.bg-secondary-300 {
+  background-color: $teal-300;
+}
+.bg-secondary-400 {
+  background-color: $teal-400;
+}
+.bg-secondary-600 {
+  background-color: $teal-600;
+}
+.bg-secondary-700 {
+  background-color: $teal-700;
+}
+.bg-secondary-700 {
+  background-color: $teal-800;
+}
+.bg-secondary-900 {
+  background-color: $teal-900;
+}
+
+.bg-primary-100 {
+  h1, h2, h3, h4, p {
+    color: $purple;
+  }
+}
