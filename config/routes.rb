@@ -6,12 +6,11 @@ Rails.application.routes.draw do
   # get "feedback", to: "pages#feedback/:id"
 
   resources :users do
-    resources :video_call
+    resources :videocalls
   end
 
-
-  resources :video_call do
-    resources :feedback, only: %i[new create show]
+  resources :videocalls do
+    resources :feedbacks, only: %i[new create]
   end
 
 
