@@ -1,0 +1,11 @@
+.btn, a {
+  text-transform: uppercase;
+  font-size: 0.8em !important;
+  letter-spacing: .1rem;
+}
+.btn-secondary {
+  color: #fff !important;
+}
+.btn-secondary:hover, .btn-outline-secondary:hover {
+  color: $teal-800 !important;
+}
