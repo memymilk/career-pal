@@ -1,4 +1,3 @@
-require "open-uri"
 require "faker"
 
 puts "Cleaning database..."
@@ -7,7 +6,6 @@ User.destroy_all
 
 puts "Creating database..."
 
-# i = 0
 20.times do
   user = User.create(
     email: Faker::Internet.email,
@@ -15,15 +13,26 @@ puts "Creating database..."
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     education: Faker::Job.education_level,
-    work_experience: Faker::Job.title
+    work_experience: Faker::Job.title,
+    extra_info: Faker::Quote.famous_last_words
   )
-  #What about the 20 photos from unsplash?
-  # This is what we had for our angry_cats project.
-  # cat.photo.attach(io: URI.open("https://cataas.com/cat"), filename: "test")
-  # cat.user = User.all[i]
-  # cat.save!
 
-  # i += 1
+end
+
+20.times do
+  feedback = Feedback.create(
+    overall_impression: Faker::Number.within(range: 1..5),
+    eye_contact: Faker::Number.within(range: 1..5),
+    background_presentation: Faker::Number.within(range: 1..5),
+    problem_solving: Faker::Number.within(range: 1..5),
+    verbal_communication: Faker::Number.within(range: 1..5),
+    body_language: Faker::Number.within(range: 1..5),
+    enthusiasm: Faker::Number.within(range: 1..5),
+    professional_appearance: Faker::Number.within(range: 1..5),
+    hireability: Faker::Number.within(range: 1..5),
+    confidence: Faker::Number.within(range: 1..5),
+    written_feedback: Faker::Quote.famous_last_words
+  )
 end
 
 puts "Finished!"
