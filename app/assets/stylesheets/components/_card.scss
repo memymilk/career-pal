@@ -2,10 +2,21 @@
   max-width:290px;
 }
 
+
+.blog-article-card {
+  .btn-outline-secondary {
+    border: none;
+    padding: 0;
+  }
+  .btn-outline-secondary:hover {
+    background-color: #fff;
+  }
+
 .feedback a:link {
 
 }
 
 .feedback a:visited {
+
 
 }
