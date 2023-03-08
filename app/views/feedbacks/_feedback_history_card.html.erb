@@ -1,0 +1,13 @@
+<% @my_array.each do |feedback|  %>
+  <div class="card mb-5 feedback" class="media-body">
+    <div class="card-title ps-4 pe-4 pt-4">
+      <h5 style="margin-bottom:0px!important">
+        <%= feedback.created_at %>
+      </h5>
+    </div>
+    <div class="card-text ps-4 pe-4 pb-2 space-between">
+      <div><p style="display:flex;align-items:center">Your pal's overall impression from the call: <span style="margin-bottom:3px" class="ms-2"><%= render "feedbacks/star_rating", amount: feedback.overall_impression %></span></p></div>
+      <div><a href="feedbacks/<%= feedback.id %>" class="stretched-link">See details</a></div>
+    </div>
+  </div>
+<% end %>
