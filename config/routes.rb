@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "profile", to: "pages#profile", as: :profile
-  get "feedback", to: "pages#feedback/:id"
+  # get "feedback", to: "pages#feedback/:id"
 
   resources :users do
     resources :video_call
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
 
   resources :video_call do
-    resources :feedback, only: %i[new create]
+    resources :feedback, only: %i[new create show]
   end
 
 
