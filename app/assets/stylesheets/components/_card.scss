@@ -1,6 +1,19 @@
 .readiness-card{
   max-width:290px;
 }
+.readiness-card button {
+  background-color:$pal-yellow!important;
+  text-transform:initial;
+  border:0px!important;
+  color: $text-colour!important;
+  padding:12px!important;
+  font-size: 1em !important;
+  letter-spacing: normal!important;
+  max-width:280px;
+  margin:auto!important;
+
+}
+
 
 
 .blog-article-card {
@@ -12,12 +25,4 @@
     background-color: #fff;
   }
 
-.feedback a:link {
-
-}
-
-.feedback a:visited {
-
-
-}
 }
