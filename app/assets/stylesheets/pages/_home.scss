@@ -1,28 +1,65 @@
 // Specific CSS for your home-page
-section .home-hero {
+#home-hero {
+  position: relative;
   overflow: hidden;
-  background-color: $primary;
-  .bg-circle {
-    width: 150%;
-    height: 150%;
-    background-color: #f00;
-    border-radius: 100%;
-    top: 50%;
-    left: -25%;
-    right: 0;
+  p {
+    font-size: 1.25em;
+  }
+  h1 {
+    line-height: 0.85em;
+    margin-bottom: 0.5em;
+  }
+  h1, p {
+    color: #fff;
+  }
+  .hero-img {
+    margin: 0 auto;
+    .circle-home-hero {
+      width: 2300px;
+      top: -225px;
+      position: relative;
+      left: 50%;
+      margin-left: -1150px;
+    }
+  }
+  .container {
+    min-height: 600px;
+    margin-top: -760px;
     position: relative;
   }
 }
 
-section {
+#blog-articles {
   .container {
-    height: 600px;
+    min-height: 600px;
+  }
+}
+
+.top-blog-articles {
+  background-repeat: no-repeat;
+  background-size: 50%;
+  .container {
+    aspect-ratio: 16 / 5;
+  }
+}
+.article-1 {
+  background-image: url("https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
+  background-position: right;
+}
+.article-2 {
+  background-image: url("https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: left;
+  .col-md-6 {
+    padding-left: 3em;
   }
 }
 
 #footer {
   h1, p, a {
     color: #fff;
+  }
+  .container {
+    min-height: 600px;
   }
 }
 
@@ -48,27 +85,21 @@ section {
     }
   }
   .hiw-text {
-    padding: 8px;
+    padding: 16px;
     width: 200px;
   }
   .hiw-line {
     width: 230px;
-    img {
-      height: 100%;
-    }
   }
-}
-
-.hiw-dashed-line {
-  .dashed-line-1{
+  .dashed-line-1 {
     width: 132.5px;
     height: 102.5px;
   }
-  .dashed-line-2{
+  .dashed-line-2 {
     width: 199.5px;
     height: 98px;
   }
-  .dashed-line-3{
+  .dashed-line-3 {
     width: 159px;
     height: 102.5px;
   }
