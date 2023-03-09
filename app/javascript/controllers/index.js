@@ -6,3 +6,9 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import TwilioController from "./twilio_controller"
+application.register("twilio", TwilioController)
+
+import VideocardController from "./videocard_controller"
+application.register("videocard", VideocardController)
