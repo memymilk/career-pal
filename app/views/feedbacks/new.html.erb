@@ -1,26 +1,126 @@
 <div class='container'>
-  <h2>Great job! Now give feedback to your pal</h2>
-  <p>Take some time to think back to the details of your call and be honest. It is really important for your pal and will help them a lot!<br>
-    We all want to nail that job interview and... make our mum proud!
-  </p>
-
-  <%= simple_form_for [@videocall, @feedback] do |f| %>
-    <div>
-      <%= f.input :overall_impression, input_html: { class: 'my-form-class' }, label: 'What was your overall impression?', as: :radio_buttons %>
-      <%= f.input_field 1..5, class: 'my-form-class' %>
+  <div class="row justify-content-center">
+      <h2 class="text-center display-5 py-5" style="background-color:#370F8C; color:white;">GREAT JOB!<br>Now give feedback to your pal 😎</h2>
+      <div class="d-flex flex-direction: column">
+        <img src="https://images.unsplash.com/photo-1613963931023-5dc59437c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80" alt="We hear you" width="750" height="350">
+        <p class="text-center my-3">Just take some time to think back to the details of your call and be honest.<br>It will help your pal a lot!<br>
+          We all want to nail that job interview and... make our mum proud!
+        </p>
+      </div>
+    <div class="col-12 col-lg-6">
+    <div class="bg-white px-5 py-3 my-5 rounded border border-1 text-center">
+      <%= simple_form_for [@videocall, @feedback] do |f| %>
+      <div class='my-3'>
+        <p>What was your overall impression?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :overall_impression, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <div class="align-items-center"><i class="fas fa-star" style="direction: ltr;"></i></div>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Did your pal make eye-contact with you?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :eye_contact, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>How well was their background presented?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :background_presentation, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Please assess your pal's problem solving skills</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :problem_solving, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>How good was their verbal communication?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :verbal_communication, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>What about body language?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :body_language, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Did they show enthusiasm during the call?</p>
+        <div class="rating justify-content-end">
+          <% (1..5).to_a.reverse.each do |i| %>
+            <%= f.radio_button :enthusiasm, i, id: "rating_#{i}", value: "#{i}" %>
+            <label for=<%= "rating_#{i}" %>>
+              <i class="fas fa-star" style="direction: ltr;"></i>
+            </label>
+          <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Please assess your pal's professional appearance</p>
+          <div class="rating justify-content-end">
+            <% (1..5).to_a.reverse.each do |i| %>
+              <%= f.radio_button :professional_appearance, i, id: "rating_#{i}", value: "#{i}" %>
+              <label for=<%= "rating_#{i}" %>>
+                <i class="fas fa-star" style="direction: ltr;"></i>
+              </label>
+            <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Did your pal seem confident?</p>
+          <div class="rating justify-content-end">
+            <% (1..5).to_a.reverse.each do |i| %>
+              <%= f.radio_button :confidence, i, id: "rating_#{i}", value: "#{i}" %>
+              <label for=<%= "rating_#{i}" %>>
+                <i class="fas fa-star" style="direction: ltr;"></i>
+              </label>
+            <% end %>
+        </div>
+        <div class='my-3'>
+          <p>Would you actually hire them?</p>
+          <div class="rating justify-content-end">
+            <% (1..5).to_a.reverse.each do |i| %>
+              <%= f.radio_button :hireability, i, id: "rating_#{i}", value: "#{i}" %>
+              <label for=<%= "rating_#{i}" %>>
+                <i class="fas fa-star" style="direction: ltr;"></i>
+              </label>
+            <% end %>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    <%= f.input :eye_contact, label: 'Did your pal make eye-contact with you?' %>
-    <%= f.input :background_presentation, label: "How well was your their background presented?" %>
-    <%= f.input :problem_solving, label: "Please assess your pal's problem solving skills" %>
-    <%= f.input :verbal_communication, label: "How good was their verbal communication?" %>
-    <%= f.input :body_language, label: "What about body language?" %>
-    <%= f.input :enthusiasm, label: "Did they show enthusiasm during the call?" %>
-    <%= f.input :professional_appearance, label: "Please assess your pal's professional appearance" %>
-    <%= f.input :hireability, label: "If you were in the position, would you hire them?" %>
-    <%= f.input :confidence, label: "Did your pal seem confident?" %>
+
+
+
+
+
     <%= f.input :written_feedback, label: "Please add here anything that could help them improve even more" %>
     <%= f.submit %>
   <% end %>
-
 </div>
