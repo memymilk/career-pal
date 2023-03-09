@@ -56,13 +56,17 @@
         <div>
           <h3 class="mt-5 ms-3 mb-3"><%= image_tag "work.svg", class:"me-2" %> My work experience</h3></div>
           <% frame_id = dom_id(current_user, "work_experience") %>
-          <div class="mb-3 mt-5 me-3 space-between flex-end"><%= render "shared/edit", path: "#", turbo_frame: frame_id %></div>
+          <%= turbo_frame_tag "edit_work_experience" do %>
+            <div class="mb-3 mt-5 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_work_experience_path, turbo_frame: frame_id %></div>
+          <% end %>
         </div>
         <div class="card mb-5">
           <div class="card-text p-4 pb-1">
 
           <!-- rb work start, change to current in production //-->
-           <p><%= current_user.work_experience %></p>
+          <%= turbo_frame_tag frame_id do %>
+          <p><%= current_user.work_experience %></p>
+          <% end %>
           <!-- <p><%= User.first.work_experience %></p> //-->
 
           <!-- rb work end //-->
@@ -80,27 +84,31 @@
         </div>
         <div class="card mb-5">
           <div class="card-text p-4 pb-1">
+
+          <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-            <!-- rb education start //-->
-              <%= current_user.education %>
-            <!-- rb education end //-->
+          <p> <%= current_user.education %> </p>
           <% end %>
+          <!-- rb education end //-->
+
           </div>
         </div>
 
         <div class="profile-tite-edit">
         <div>
           <h3 class="ms-3 mb-3"><%= image_tag "info.svg", class:"me-2" %> Other info</h3></div>
-          <% frame_id = dom_id(current_user, "other") %>
-          <div class="mb-3 me-3 space-between flex-end"><%= render "shared/edit", path: "#", turbo_frame: frame_id %></div>
+          <% frame_id = dom_id(current_user, "extra_info") %>
+          <%= turbo_frame_tag "edit_extra_info" do %>
+          <div class="mb-3 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_extra_info_path, turbo_frame: frame_id %></div>
+          <% end %>
         </div>
         <div class="card mb-5">
-          <div class="card-text p-4  pb-1">
+          <div class="card-text p-4 pb-1">
 
           <!-- rb education start //-->
-
+          <%= turbo_frame_tag frame_id do %>
           <p><%= current_user.extra_info %></p>
-
+          <% end %>
           <!-- rb education end //-->
 
           </div>

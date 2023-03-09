@@ -91,6 +91,34 @@ class PagesController < ApplicationController
     redirect_to show_work_experience_path
   end
 
+
+  # extra_info_editing_below
+
+  def show_extra_info
+  end
+
+  def edit_extra_info
+  end
+
+  def update_extra_info
+    current_user.update(extra_info: params.dig(:user, :extra_info))
+    redirect_to show_extra_info_path
+  end
+
+  # first_name_below
+
+  def show_first_name
+  end
+
+  def edit_first_name
+  end
+
+  def update_first_name
+    current_user.update(first_name: params.dig(:user, :first_name))
+    redirect_to show_first_name_path
+  end
+
+
   private
 
   def compare(params)
