@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     @hireability = []
     @confidence = []
     @problem_solving = []
-    @user = User.last
+    @user = current_user
 
     @user.video_calls.each do |videocall|
       videocall.feedbacks.each do |feedback|

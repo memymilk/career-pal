@@ -82,12 +82,13 @@
             <div class="mb-3 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_education_path, turbo_frame: frame_id %></div>
           <% end %>
         </div>
+
         <div class="card mb-5">
           <div class="card-text p-4 pb-1">
 
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-          <p> <%= current_user.education %> </p>
+          <p> <%= current_user.education %> awdawd </p>
           <% end %>
           <!-- rb education end //-->
 
