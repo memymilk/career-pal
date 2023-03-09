@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     @hireability = []
     @confidence = []
     @problem_solving = []
-    @user = User.last
+    @user = current_user
 
     @user.video_calls.each do |videocall|
       videocall.feedbacks.each do |feedback|
@@ -64,15 +64,64 @@ class PagesController < ApplicationController
     @text_hireability = compare(@hireability)
     @text_confidence = compare(@confidence)
     @text_problem_solving = compare(@problem_solving)
-
-
-
   end
+
+  # education_editing_below
+  def show_education
+  end
+
+  def edit_education
+  end
+
+  def update_education
+    current_user.update(education: params.dig(:user, :education))
+    redirect_to show_education_path
+  end
+
+  # work_experience_editing_below
+
+  def show_work_experience
+  end
+
+  def edit_work_experience
+  end
+
+  def update_work_experience
+    current_user.update(work_experience: params.dig(:user, :work_experience))
+    redirect_to show_work_experience_path
+  end
+
+
+  # extra_info_editing_below
+
+  def show_extra_info
+  end
+
+  def edit_extra_info
+  end
+
+  def update_extra_info
+    current_user.update(extra_info: params.dig(:user, :extra_info))
+    redirect_to show_extra_info_path
+  end
+
+  # first_name_below
+
+  def show_first_name
+  end
+
+  def edit_first_name
+  end
+
+  def update_first_name
+    current_user.update(first_name: params.dig(:user, :first_name))
+    redirect_to show_first_name_path
+  end
+
 
   private
 
   def compare(params)
-
     if params >= 4
       "Way to go, you are nailing it!"
     elsif params < 4 && params >= 3.5
@@ -82,12 +131,5 @@ class PagesController < ApplicationController
     else
        "Hey pal, have a look at this one"
     end
-
-
-
   end
-
-
-
-
 end

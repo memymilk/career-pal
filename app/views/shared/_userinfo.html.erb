@@ -4,10 +4,17 @@
       </div>
   </div>
     <div class="ms-4">
-      <h3>Name</h3>
+    <% frame_id = dom_id(current_user, "first_name") %>
+    <%= turbo_frame_tag "edit_first_name" do %>
+    <% frame_id = dom_id(current_user, "edit_first_name") %>
+      <%= turbo_frame_tag frame_id do %>
+      <h3><%= current_user.first_name %></h3>
+      <% end %>
       <span class="secondary">they/them</span>
     </div>
-    <div class="space-between ms-3" style="align-self:flex-start"><%= render "shared/edit" %>
+
+    <div class="space-between ms-3" style="align-self:flex-start"><%= render "shared/edit", path: edit_profile_first_name_path, turbo_frame: frame_id %>
+     <% end %>
     </div>
 
 </div>

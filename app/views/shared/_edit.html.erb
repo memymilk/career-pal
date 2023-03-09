@@ -1,1 +1,3 @@
-<%= image_tag "edit.svg", class:"edit" %><span class="service ms-1 flex-end"> Edit</span>
+<%= link_to path, data: { turbo_frame: turbo_frame } do  %>
+  <%= image_tag "edit.svg", class:"edit" %><span class="service ms-1 flex-end"> Edit</span>
+<% end %>
