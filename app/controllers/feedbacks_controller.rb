@@ -20,6 +20,6 @@ class FeedbacksController < ApplicationController
   private
 
   def feedback_params
-
+    params.require(:feedback).permit(:written_feedback, :overall_impression, :eye_contact, :background_presentation, :problem_solving, :verbal_communication, :body_language, :enthusiasm, :professional_appearance, :hireability, :confidence)
   end
 end

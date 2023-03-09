@@ -10,9 +10,8 @@ Rails.application.routes.draw do
     resources :videocalls
   end
 
-
   resources :videocalls do
-    resources :feedbacks, only: %i[new create show]
+    resources :feedbacks, only: %i[new create]
   end
 
 
