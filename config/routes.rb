@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :videocalls, only: :show
 
   get "profile", to: "pages#profile", as: :profile
-  # get "feedback", to: "pages#feedback/:id"
 
   resources :users do
     resources :videocalls, only: :show
