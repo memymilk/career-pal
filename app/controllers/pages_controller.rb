@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     @problem_solving = []
     @user = current_user
 
-    @user.video_calls.each do |videocall|
+    @user.videocalls.each do |videocall|
       videocall.feedbacks.each do |feedback|
         @my_array << feedback if feedback.giver_id != @user.id
       end
