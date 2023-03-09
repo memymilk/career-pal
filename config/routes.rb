@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
   resources :videocalls, only: :show
 
   get "profile", to: "pages#profile", as: :profile
   # get "feedback", to: "pages#feedback/:id"
 
   resources :users do
-    resources :videocalls
+    resources :videocalls, only: :show
   end
 
   resources :videocalls do
