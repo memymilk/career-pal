@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "profile", to: "pages#profile", as: :profile
+
   # education editing below
   get "profile/education", to: "pages#show_education", as: :show_education
   get "profile/edit_education", to: "pages#edit_education", as: :edit_profile_education
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   patch "first_name", to: "pages#update_first_name", as: :update_profile_first_name
 
   # get "feedback", to: "pages#feedback/:id"
+
 
   resources :users do
     resources :videocalls

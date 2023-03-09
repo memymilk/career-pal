@@ -1,9 +1,8 @@
 require "faker"
 
 puts "Cleaning database..."
-VideoCall.destroy_all
+Videocall.destroy_all
 Feedback.destroy_all
-VideoCall.destroy_all
 User.destroy_all
 
 puts "Creating database..."
@@ -17,25 +16,17 @@ User.create!(
   extra_info: Faker::Quote.famous_last_words
 )
 
-20.times do
-  user_one = User.create!(
-    email: Faker::Internet.email,
-    password: "123456",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    education: Faker::Job.education_level,
-    work_experience: Faker::Job.title,
-    extra_info: Faker::Quote.famous_last_words
-  )
-end
-
+user_one = User.create!(
+  email: Faker::Internet.email,
+  password: "123456",
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  education: Faker::Job.education_level,
+  work_experience: Faker::Job.title,
+  extra_info: Faker::Quote.famous_last_words
+)
 
 20.times do
-  video_call = VideoCall.create!(
-    user_one_id: User.all.first.id,
-    user_two_id: User.all.last.id
-  )
-end
 
   user_two = User.create!(
     email: Faker::Internet.email,
@@ -47,14 +38,13 @@ end
     extra_info: Faker::Quote.famous_last_words
   )
 
-
-  call = VideoCall.create!(
+  videocall = Videocall.create!(
     user_one_id: user_one.id,
     user_two_id: user_two.id
   )
 
   feedback_user_one = Feedback.create!(
-    video_call_id: call.id,
+    videocall_id: videocall.id,
     giver_id: user_one.id,
     overall_impression: Faker::Number.within(range: 1..5),
     eye_contact: Faker::Number.within(range: 1..5),
@@ -70,7 +60,7 @@ end
   )
 
   feedback_user_two = Feedback.create!(
-    video_call_id: call.id,
+    videocall_id: videocall.id,
     giver_id: user_two.id,
     overall_impression: Faker::Number.within(range: 1..5),
     eye_contact: Faker::Number.within(range: 1..5),
@@ -82,8 +72,6 @@ end
     professional_appearance: Faker::Number.within(range: 1..5),
     hireability: Faker::Number.within(range: 1..5),
     confidence: Faker::Number.within(range: 1..5),
-    giver_id: User.first.id,
-    video_call_id: VideoCall.sample.id,
     written_feedback: Faker::Quote.famous_last_words
   )
 end
