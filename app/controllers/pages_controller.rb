@@ -64,15 +64,36 @@ class PagesController < ApplicationController
     @text_hireability = compare(@hireability)
     @text_confidence = compare(@confidence)
     @text_problem_solving = compare(@problem_solving)
+  end
 
+  # education_editing_below
+  def show_education
+  end
 
+  def edit_education
+  end
 
+  def update_education
+    current_user.update(education: params.dig(:user, :education))
+    redirect_to show_education_path
+  end
+
+  # work_experience_editing_below
+
+  def show_work_experience
+  end
+
+  def edit_work_experience
+  end
+
+  def update_work_experience
+    current_user.update(work_experience: params.dig(:user, :work_experience))
+    redirect_to show_work_experience_path
   end
 
   private
 
   def compare(params)
-
     if params >= 4
       "Way to go, you are nailing it!"
     elsif params < 4 && params >= 3.5
@@ -82,12 +103,5 @@ class PagesController < ApplicationController
     else
        "Hey pal, have a look at this one"
     end
-
-
-
   end
-
-
-
-
 end

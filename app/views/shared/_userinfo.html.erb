@@ -7,7 +7,8 @@
       <h3>Name</h3>
       <span class="secondary">they/them</span>
     </div>
-    <div class="space-between ms-3" style="align-self:flex-start"><%= render "shared/edit" %>
+    <% frame_id = dom_id(current_user, "name") %>
+    <div class="space-between ms-3" style="align-self:flex-start"><%= render "shared/edit", path: "#", turbo_frame: frame_id %>
     </div>
 
 </div>
