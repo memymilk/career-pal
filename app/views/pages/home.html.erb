@@ -1,10 +1,13 @@
-<section id="home-hero">
+<section id="home-hero" class="bg-circle">
+    <div class="hero-img">
+      <%= image_tag "halfcircle_home_hero.svg", class:"circle-home-hero"%>
+    </div>
     <div class="container d-flex justify-content-center">
     <div class="row justify-content-center my-auto">
-          <div class="col-md-8 text-center">
-            <h1 class="display-1">Lorem Ipsum</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ullam at natus obcaecati, rem qui facilis quae doloribus repellendus a.</p>
-            <a href="about.html" class="btn btn-secondary btn-lg">Learn More</a>
+          <div class="col text-center">
+            <h1 class="display-2">Get The Job <br> Impress Your Mum</h1>
+            <p>Anxious about your first job interview? Practice with your CareerPal!</p>
+            <a href="about.html" class="btn btn-secondary btn-lg">Lets Get Started</a>
         </div>
       </div>
     </div>
@@ -12,64 +15,69 @@
 
 <section id="how-it-work">
     <div class="container d-flex justify-content-center">
-    <div class="row justify-content-center my-auto">
-          <h1 class="display-3 text-center">How It Works</h1>
-          <div class="col-md-8">
+      <div class="row justify-content-center my-auto py-5">
 
-          <div class="hiw-item d-flex align-items-center">
-            <div class="hiw-icon order-md-2">
-              <%= image_tag "icon_hiw_step_1.svg" %>
+          <h1 class="display-3 text-center mb-5">How It Works</h1>
+          <div class="col-md-9">
+
+            <div class="hiw-item d-flex align-items-center justify-content-end">
+              <div class="hiw-icon order-md-2">
+                <%= image_tag "icon_hiw_step_1.svg" %>
+              </div>
+              <div class="hiw-text text-left order-md-1">
+                <p>SignUp. Fill out the CV form or connect your Linked In Account</p>
+              </div>
+              <div class="hiw-line d-none d-md-inline-block">
+                <%= image_tag "hiw_dashed_line_step_1.svg", class:"dashed-line-1"%>
+              </div>
             </div>
-            <div class="hiw-text text-left order-md-1"><p>SignUp. Fill out the CV form or connect your Linked In Account</p></div>
-            <div class="hiw-line hiw-dashed-line">
-               <%= image_tag "hiw_dashed_line_step_1.svg"%>
+
+            <div class="hiw-item d-flex align-items-center">
+              <div class="hiw-icon">
+                <%= image_tag "icon_hiw_step_2.svg" %>
+              </div>
+              <div class="hiw-text text-left">
+                <p>Get matched with another Pal online and start the video call</p>
+              </div>
+              <div class="hiw-line d-none d-md-inline-block">
+                <%= image_tag "hiw_dashed_line_step_2.svg", class:"dashed-line-2"%>
+              </div>
             </div>
+
+            <div class="hiw-item d-flex align-items-center justify-content-end">
+              <div class="hiw-icon order-md-3">
+                <%= image_tag "icon_hiw_step_3.svg" %>
+              </div>
+              <div class="hiw-text text-left order-md-2">
+                <p>Switch roles between interviewer & interviewee</p>
+              </div>
+              <div class="hiw-line d-none d-md-inline-block order-md-1"></div>
+            </div>
+
+            <div class="hiw-item d-flex align-items-center">
+              <div class="hiw-icon">
+                <%= image_tag "icon_hiw_step_4.svg" %>
+              </div>
+              <div class="hiw-text text-left">
+                <p>Get feedback to improve and then nail your next real interview!</p>
+              </div>
+              <div class="hiw-line d-none d-md-inline-block">
+              <%= image_tag "hiw_dashed_line_step_4.svg", class:"dashed-line-3"%>
+              </div>
+            </div>
+
           </div>
-
-          <div class="hiw-item d-flex align-items-center">
-            <div class="hiw-icon">
-              <%= image_tag "icon_hiw_step_2.svg" %>
-            </div>
-            <div class="hiw-text text-left"><p>Get matched with another Pal online and start the video call</p></div>
-            <div class="hiw-line hiw-dashed-line">
-              <%= image_tag "hiw_dashed_line_step_2.svg" %>
-            </div>
-          </div>
-
-          <div class="hiw-item d-flex align-items-center">
-            <div class="hiw-icon order-md-3">
-              <%= image_tag "icon_hiw_step_3.svg" %>
-            </div>
-            <div class="hiw-text text-left order-md-2"><p>Switch roles between interviewer & interviewee</p></div>
-            <div class="hiw-line order-md-1"></div>
-          </div>
-
-          <div class="hiw-item d-flex align-items-center">
-            <div class="hiw-icon">
-              <%= image_tag "icon_hiw_step_4.svg" %>
-            </div>
-            <div class="hiw-text text-left"><p>Get feedback to improve and then nail your next real interview!</p></div>
-            <div class="hiw-line hiw-dashed-line">
-             <%= image_tag "hiw_dashed_line_step_4.svg" %>
-            </div>
-          </div>
-
-
-        </div>
       </div>
     </div>
 </section>
 
-<section id="top-blog-articles" class="bg-primary-100">
+<section class="top-blog-articles article-1 bg-primary-100">
   <div class="container d-flex">
-    <div class="row my-auto bg-primary-100">
-      <div class="col-md-6 align-self-center px-3">
+    <div class="row my-auto">
+      <div class="col-md-6 align-self-center py-5">
         <h1 class="display-3">Lorem Ipsum</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ullam at natus obcaecati, rem qui facilis quae doloribus repellendus a.</p>
         <a href="about.html" class="btn btn-outline-primary btn-lg">Read</a>
-      </div>
-      <div class="col-md-6">
-        <img src="https://images.unsplash.com/photo-1616587226960-4a03badbe8bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" alt="" class="img-fluid"/>
       </div>
     </div>
   </div>
@@ -127,13 +135,10 @@
   </div>
 </section>
 
-<section class="bg-primary-100">
+<section class="bg-primary-100 top-blog-articles article-2">
   <div class="container d-flex">
-    <div class="row justify-content-center my-auto">
-      <div class="col-md-6 align-self-center">
-        <img src="https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" class="img-fluid">
-      </div>
-      <div class="col-md-6 align-self-center px-3">
+    <div class="row justify-content-end my-auto">
+      <div class="col-md-6 align-self-center py-5 pl-5">
         <h1 class="display-3">Lorem Ipsum</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ullam at natus obcaecati, rem qui facilis quae doloribus repellendus a.</p>
         <a href="about.html" class="btn btn-outline-primary btn-lg">Read</a>
