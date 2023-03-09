@@ -91,7 +91,6 @@ class PagesController < ApplicationController
     redirect_to show_work_experience_path
   end
 
-
   # extra_info_editing_below
 
   def show_extra_info
@@ -125,11 +124,11 @@ class PagesController < ApplicationController
     if params >= 4
       "Way to go, you are nailing it!"
     elsif params < 4 && params >= 3.5
-       "You are on the right track, almost there"
+      "You are on the right track, almost there"
     elsif params < 2.5 && params >= 1.5
-       "Hmm this is something to pay attention to"
+      "Hmm this is something to pay attention to"
     else
-       "Hey pal, have a look at this one"
+      "Hey pal, have a look at this one"
     end
   end
 end

@@ -1,4 +1,4 @@
-<% frame_id = dom_id(current_user, "first_name") %>
+<% frame_id = dom_id(current_user, "edit_first_name") %>
 
 <%= turbo_frame_tag frame_id do %>
   <%= simple_form_for current_user, url: update_profile_first_name_path, data: {turbo_method: :patch} do |f| %>
