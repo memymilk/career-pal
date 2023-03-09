@@ -1,22 +1,26 @@
-<h2>Great job! Now give feedback to your pal</h2>
+<div class='container'>
+  <h2>Great job! Now give feedback to your pal</h2>
+  <p>Take some time to think back to the details of your call and be honest. It is really important for your pal and will help them a lot!<br>
+    We all want to nail that job interview and... make our mum proud!
+  </p>
 
-<%= simple_form_for [@videocall, @feedback] do |f| %>
-  <div>
-    <%= f.input :overall_impression, input_html: { class: 'my-form-class' }, label: 'What was your overall impression?', as: :radio_buttons %>
-    <%= f.input_field 1..5, class: 'my-form-class' %>
-    <%= image_tag "star_filled.svg", class:"" %>
-    <%= image_tag "star_empty.svg", class:"" %>
+  <%= simple_form_for [@videocall, @feedback] do |f| %>
+    <div>
+      <%= f.input :overall_impression, input_html: { class: 'my-form-class' }, label: 'What was your overall impression?', as: :radio_buttons %>
+      <%= f.input_field 1..5, class: 'my-form-class' %>
+    </div>
 
-  </div>
-  <%= f.input :eye_contact %>
-  <%= f.input :background_presentation %>
-  <%= f.input :problem_solving %>
-  <%= f.input :verbal_communication %>
-  <%= f.input :body_language %>
-  <%= f.input :enthusiasm %>
-  <%= f.input :professional_appearance %>
-  <%= f.input :hireability %>
-  <%= f.input :confidence %>
-  <%= f.input :written_feedback %>
-  <%= f.submit %>
-<% end %>
+    <%= f.input :eye_contact, label: 'Did your pal make eye-contact with you?' %>
+    <%= f.input :background_presentation, label: "How well was your their background presented?" %>
+    <%= f.input :problem_solving, label: "Please assess your pal's problem solving skills" %>
+    <%= f.input :verbal_communication, label: "How good was their verbal communication?" %>
+    <%= f.input :body_language, label: "What about body language?" %>
+    <%= f.input :enthusiasm, label: "Did they show enthusiasm during the call?" %>
+    <%= f.input :professional_appearance, label: "Please assess your pal's professional appearance" %>
+    <%= f.input :hireability, label: "If you were in the position, would you hire them?" %>
+    <%= f.input :confidence, label: "Did your pal seem confident?" %>
+    <%= f.input :written_feedback, label: "Please add here anything that could help them improve even more" %>
+    <%= f.submit %>
+  <% end %>
+
+</div>
