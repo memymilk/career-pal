@@ -57,7 +57,7 @@
 
 #footer {
   h1, p, a {
-    color: #fff;
+    color: $purple-50;
   }
   .container {
     min-height: 600px;
@@ -103,5 +103,15 @@
   .dashed-line-3 {
     width: 159px;
     height: 102.5px;
+  }
+}
+
+.form-inputs {
+  .form-control::placeholder {
+    color: $purple-50;
+    opacity: 1;
+  }
+  .form-text {
+    color: $purple-50;
   }
 }
