@@ -26,7 +26,7 @@ class VideocallsController < ApplicationController
     # Create Video grant for our token
     video_grant = Twilio::JWT::AccessToken::VideoGrant.new
     # This room should be dinamic to the room the user is trying to join eg @room.id
-    video_grant.room = 'cool_room'
+    video_grant.room = "room_#{params[:id]}"
     # Create an Access Token
     token = Twilio::JWT::AccessToken.new(
       account_sid,

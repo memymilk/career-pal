@@ -71,6 +71,9 @@ $teal-900: #06281E;
 .bg-secondary {
   background-color: $teal;
 }
+.bg-secondary-50 {
+  background-color: rgba(210, 244, 234, 1);
+}
 .bg-secondary-100 {
   background-color: $teal-100;
 }
@@ -100,4 +103,11 @@ $teal-900: #06281E;
   h1, h2, h3, h4, p {
     color: $purple;
   }
+}
+
+.text-primary {
+  color: $purple;
+}
+.text-secondary {
+  color: $teal;
 }
