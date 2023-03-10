@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CareerPal</title>
+    <%= favicon_link_tag %>
+    <title>CareerPal: We help to prepare developers for their first job interview with real life practice</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,10 +15,10 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
 
-    <div class="container">
-      <%= yield %>
+
+  <div class="container-fluid p-0">
+    <%= yield %>
     </div>
 
-   <%= render "shared/footer" %>
   </body>
 </html>

@@ -1,0 +1,6 @@
+<% frame_id = dom_id(current_user, "extra_info") %>
+<%= turbo_frame_tag frame_id do %>
+  <!-- rb education start //-->
+    <p><%= current_user.extra_info %></p>
+  <!-- rb education end //-->
+<% end %>

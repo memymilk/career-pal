@@ -8,5 +8,20 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  _width: 25px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.form-switch {
+  .form-check-label {
+    color: $purple-50;
+  }
+  .form-check-input {
+    border: 0.6px solid $purple-50;
+  }
+}
+
+.my-dropdown-item {
+  color: $purple !important;
 }

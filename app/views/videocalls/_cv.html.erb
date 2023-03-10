@@ -1,0 +1,115 @@
+<div class="col-4" data-controller="videocard">
+  <div class="row">
+    <ul class="nav nav-tabs p-0">
+      <div class="col-4">
+        <li class="nav-item cv-link ">
+          <a class="nav-link cv-link" aria-current="page" href="?query=questions">Questions</a>
+        </li>
+      </div>
+      <div class="col-2 video-nav">
+        <li class="nav-item cv-link">
+          <a class="nav-link cv-link" href="?query=cv">CV</a>
+        </li>
+      </div>
+      <div class="col-6 video-nav">
+          <li class="nav-item">
+          <a class="nav-link cv-link"></a>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="row card p-3 border-top-0">
+    <% if params[:query] == "questions" || params[:query].nil? %>
+      <div class="col-12">
+        <h5>Personal</h5>
+      </div>
+      <div class="row d-flex">
+        <div class="col-9">
+          <ol>
+            <li>Lorem Ipsum Dolor?</li>
+            <li>Lorem Ipsum Dolor?</li>
+            <li>Lorem Ipsum Dolor?</li>
+          </ol>
+        </div>
+        <div class="col-3">
+          <ol class = "list-unstyled">
+            <li>5-10min</li>
+            <li>5-10min</li>
+            <li>5-10min</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-12">
+        <h5>Technical</h5>
+      </div>
+      <div class="row d-flex">
+        <div class="col-9">
+          <ol>
+            <li class="collapsible" data-action="click->videocard#collapse1" data-videocard-target="header">Question 1</li>
+          </ol>
+        </div>
+        <div class="col-3 pt-3">
+          <ol class = "list-unstyled">
+            <li>5-10min</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-12">
+        <hr>
+        <p class = "collapsible-content" data-videocard-target="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptates unde assumenda excepturi illo voluptas distinctio!</p>
+      </div>
+        <div class="row d-flex">
+        <div class="col-9">
+          <ol>
+            <li class="collapsible" data-action="click->videocard#collapse2" data-videocard-target="header2">Question 2</li>
+          </ol>
+        </div>
+        <div class="col-3 pt-3">
+          <ol class = "list-unstyled">
+            <li>5-10min</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-12">
+        <hr>
+        <p class = "collapsible-content" data-videocard-target="content2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero voluptates unde assumenda excepturi illo voluptas distinctio!</p>
+      </div>
+      </div>
+    <% elsif params[:query] == "cv" %>
+      <div class="col-12">
+        <h5>Education</h5>
+        </div>
+          <div class="col-9">
+            <p>03.01.2022 - 03.03.2023</p>
+            <p>TU, Berlin</p>
+            <p>BSC, Marketing</p>
+            <p>03.01.2022 - 03.03.2023</p>
+            <p>TU, Berlin</p>
+            <p>BSC, Marketing</p>
+          </div>
+          <div class="col-3">
+            <ol class = "list-unstyled">
+              <li>5-10min</li>
+              <li>5-10min</li>
+              <li>5-10min</li>
+            </ol>
+          </div>
+        <div class="col-12">
+          <h5>Experienc</h5>
+        </div>
+          <div class="col-9">
+            <ol>
+              <li>Lorem Ipsum Dolor?</li>
+              <li>Lorem Ipsum Dolor?</li>
+            </ol>
+          </div>
+          <div class="col-3">
+            <ol class = "list-unstyled">
+              <li>5-10min</li>
+              <li>5-10min</li>
+            </ol>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

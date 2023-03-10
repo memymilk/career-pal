@@ -4,7 +4,7 @@ class CreateFeedbacks < ActiveRecord::Migration[7.0]
       t.text :answers
       t.references :giver, foreign_key: { to_table: :users }
       t.references :receiver, foreign_key: { to_table: :users }
-      t.references :video_call
+      t.references :videocall
 
       t.timestamps
     end

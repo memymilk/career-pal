@@ -1,6 +1,6 @@
 class CreateVideoCalls < ActiveRecord::Migration[7.0]
   def change
-    create_table :video_calls do |t|
+    create_table :videocalls do |t|
       t.references :user_one, foreign_key: { to_table: :users }
       t.references :user_two, foreign_key: { to_table: :users }
 

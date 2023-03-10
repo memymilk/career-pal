@@ -1,0 +1,184 @@
+ <!-- single quality block //-->
+<div class="container">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Overall impression: <%= @overall %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.overall_impression  %>
+    </div>
+    <div class="col">
+    <span class="tip"><%= @text_overall %></span>
+
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container  mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Eye contact: <%= @eye_contact %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.eye_contact  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_eye_contact %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Your background presentation: <%= @background_presentation %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.background_presentation  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_background_presentation %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Problem Solving skills: <%= @problem_solving %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.problem_solving  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_problem_solving %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Verbal communication: <%= @verbal_communication %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.verbal_communication  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_verbal_communication %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Body language: <%= @body_language %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.body_language  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_body_language %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Enthusiasm: <%= @enthusiasm %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.enthusiasm  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_enthusiasm %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Professional appearance: <%= @professional_appearance %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.professional_appearance  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_professional_appearance %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Hireability: <%= @hireability %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.hireability  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_hireability %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Confidence: <%= @confidence %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @feedback.confidence  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_confidence %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+<br>
+<hr>
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+    <div class="col">
+      <strong>Your Pal's observations:</strong><br>
+      <div class="mt-2"><%= @feedback.written_feedback  %></div>
+
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->

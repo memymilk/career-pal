@@ -1,11 +1,28 @@
 .readiness-card{
   max-width:290px;
 }
-
-.feedback a:link {
+.readiness-card button {
+  background-color:$pal-yellow!important;
+  text-transform:initial;
+  border:0px!important;
+  color: $text-colour!important;
+  padding:12px!important;
+  font-size: 1em !important;
+  letter-spacing: normal!important;
+  max-width:280px;
+  margin:auto!important;
 
 }
 
-.feedback a:visited {
+
+
+.blog-article-card {
+  .btn-outline-secondary {
+    border: none;
+    padding: 0;
+  }
+  .btn-outline-secondary:hover {
+    background-color: #fff;
+  }
 
 }

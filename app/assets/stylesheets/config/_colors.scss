@@ -8,3 +8,96 @@ $orange: #E67E22;
 $green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
+$pal-yellow: #FBD230;
+
+$purple: #370F8C;
+$purple-50: #D9D2E2;
+$purple-100: #C0B0D6;
+$purple-200: #A266C6;
+$purple-300: #8561B8;
+$purple-400: #6E42AC;
+$purple-500: #5923A1;
+$purple-600: #50209D;
+$purple-700: #441592;
+$purple-900: #1D017D;
+
+$text-colour: #514A6B;
+
+$teal: #20C997;
+$teal-100: #D2F4EA;
+$teal-200: #A6E9D5;
+$teal-300: #79DFC1;
+$teal-400: #4DD4AC;
+$teal-600: #1AA179;
+$teal-700: #13795B;
+$teal-800: #0D503C;
+$teal-900: #06281E;
+
+// BG-PRIMARY
+
+.bg-primary {
+  background-color: $purple;
+}
+.bg-primary-50 {
+  background-color: $purple-50;
+}
+.bg-primary-100 {
+  background-color: $purple-100;
+}
+.bg-primary-200 {
+  background-color: $purple-200;
+}
+.bg-primary-300 {
+  background-color: $purple-300;
+}
+.bg-primary-400 {
+  background-color: $purple-400;
+}
+.bg-primary-500 {
+  background-color: $purple-500;
+}
+.bg-primary-600 {
+  background-color: $purple-600;
+}
+.bg-primary-700 {
+  background-color: $purple-700;
+}
+.bg-primary-900 {
+  background-color: $purple-900;
+}
+
+// BG-SECONDARY
+
+.bg-secondary {
+  background-color: $teal;
+}
+.bg-secondary-100 {
+  background-color: $teal-100;
+}
+.bg-secondary-200 {
+  background-color: $teal-200;
+}
+.bg-secondary-300 {
+  background-color: $teal-300;
+}
+.bg-secondary-400 {
+  background-color: $teal-400;
+}
+.bg-secondary-600 {
+  background-color: $teal-600;
+}
+.bg-secondary-700 {
+  background-color: $teal-700;
+}
+.bg-secondary-700 {
+  background-color: $teal-800;
+}
+.bg-secondary-900 {
+  background-color: $teal-900;
+}
+
+.bg-primary-100 {
+  h1, h2, h3, h4, p {
+    color: $purple;
+  }
+}
