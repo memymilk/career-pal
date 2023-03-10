@@ -33,5 +33,21 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "version": "1.0.0",
-  "description": "My webpack project"
+  "description": "My webpack project",
+
+
+  "name": "chartjs-example",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel app/views/pages/profile.html.erb",
+    "build": "parcel build app/views/pages/profile.html.erb"
+  },
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "@cubejs-client/core": "^0.31.0",
+    "chart.js": "^4.0.0"
+  }
 }
