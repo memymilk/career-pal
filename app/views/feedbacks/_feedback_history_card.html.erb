@@ -1,5 +1,5 @@
-<% @my_array.each do |feedback|  %>
-  <div class="card mb-5 feedback" class="media-body">
+<% current_user.feedbacks_as_receiver.each do |feedback|  %>
+  <div class="card mb-3 feedback" class="media-body">
     <div class="card-title ps-4 pe-4 pt-4">
       <h5 style="margin-bottom:0px!important">
         <%= feedback.created_at %>
