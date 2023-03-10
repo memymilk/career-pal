@@ -6,8 +6,10 @@ Feedback.destroy_all
 User.destroy_all
 
 puts "Creating database..."
-User.create!(
-  email: "a@a.com",
+
+
+user_one = User.create!(
+  email: Faker::Internet.email,
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -16,8 +18,8 @@ User.create!(
   extra_info: Faker::Quote.famous_last_words
 )
 
-user_one = User.create!(
-  email: Faker::Internet.email,
+User.create!(
+  email: "a@a.com",
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
