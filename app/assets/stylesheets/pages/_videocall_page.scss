@@ -1,0 +1,43 @@
+.video {
+  border: 1px solid $purple;
+  border-radius: 3px;
+}
+.video-tab-content {
+  background-color: #fff;
+  border: 1px solid $purple;
+  border-radius: 0 0 3px 3px;
+  border-top: 0px solid #fff;
+}
+
+.nav-item .active li {
+  background-color: #fff;
+  border: 1px solid $purple;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 0px solid #fff;
+}
+#question-tab {
+  ol {
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+  }
+  li {
+    line-height: 2.2em;
+  }
+  .time-suggs {
+    color: $purple-100;
+    font-size: 0.75em;
+    float: right;
+    margin-top: 0.75em;
+  }
+  .p-lead {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 0.75em;
+    color: $purple-100;
+  }
+  .accordion-button::after {
+    background-image: url("accordion_icon_folded.svg");
+    background-size: 40%;
+    background-position: center;
+  }
+}

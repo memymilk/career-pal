@@ -1,0 +1,6 @@
+<% frame_id = dom_id(current_user, "edit_first_name") %>
+<%= turbo_frame_tag frame_id do %>
+  <!-- rb first_name start //-->
+    <h3><%= current_user.first_name %></h3>
+  <!-- rb first_name end //-->
+<% end %>
