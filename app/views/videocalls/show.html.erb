@@ -1,4 +1,4 @@
-<section id="video-section" class="bg-secondary-50">
+<section id="video-section">
   <div class="container">
     <!--Countdown-->
     <div class="row col text-center countown">
@@ -7,7 +7,9 @@
     </div>
     <div class="row">
       <!--Video-->
-      <div class="col-md-7 video my-3 p-0" id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+      <div class="col-md-7 my-3 p-0">
+        <div class="video" id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+        </div>
       </div>
       <div class="col-md-5 my-3">
 

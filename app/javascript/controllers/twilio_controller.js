@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 const { connect, createLocalTracks } = require('twilio-video');
+const { createLocalVideoTrack } = require('twilio-video');
 
 
 // Connects to data-controller="twilio"
@@ -13,7 +14,7 @@ export default class extends Controller {
     console.log("Hello",this.element, this.tokenValue)
     createLocalTracks({
       audio: true,
-      video: {width: 300},
+      video: {height: 1080, width: 1920},
     }).then(localTracks => {
       return connect(this.tokenValue, {
         tracks: localTracks
