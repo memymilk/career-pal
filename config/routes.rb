@@ -13,6 +13,4 @@ Rails.application.routes.draw do
   resources :videocalls do
     resources :feedbacks, only: %i[new create]
   end
-
-
 end
