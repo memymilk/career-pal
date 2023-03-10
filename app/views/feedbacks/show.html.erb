@@ -1,0 +1,19 @@
+<div class="profile-container mt-5">
+  <div class="dashboard-head">
+    <div><%= render "shared/userinfo" %></div>
+    <div><%= render "shared/readiness_card" %></div>
+  </div>
+
+ <div class="text-center"> <h3 class="mt-5 ms-3 mb-3"><%= image_tag "call.svg", class:"me-2" %> Your Call <%= @feedback.created_at %></h3></div>
+      <div class="card mb-5">
+        <div class="mt-4 me-3 space-between flex-end"><%= render "shared/delete" %></div>
+
+        <div class="card-text pb-4 ps-4 pe-4 mb-3">
+              <!-- single quality block //-->
+              <%= render "feedbacks/single_feedback" %>
+             <!-- single quality block end //-->
+
+        </div>
+      </div>
+    </div>
+</div>
