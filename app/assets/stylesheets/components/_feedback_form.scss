@@ -3,6 +3,11 @@
   transform: scale(0);
 }
 
+.title {
+  color:#514A6B;
+  font-family: $headers-font;
+}
+
 .rating {
   display: flex;
   flex-direction: row-reverse;
