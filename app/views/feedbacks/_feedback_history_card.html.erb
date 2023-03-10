@@ -7,7 +7,8 @@
     </div>
     <div class="card-text ps-4 pe-4 pb-2 space-between">
       <div><p style="display:flex;align-items:center">Your pal's overall impression from the call: <span style="margin-bottom:3px" class="ms-2"><%= render "feedbacks/star_rating", amount: feedback.overall_impression %></span></p></div>
-      <div><a href="feedbacks/<%= feedback.id %>" class="stretched-link">See details</a></div>
+
+      <%= link_to "See details",  videocall_feedback_path(feedback.videocall, feedback), class:"stretched-link" %>
     </div>
   </div>
 <% end %>

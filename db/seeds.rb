@@ -6,8 +6,10 @@ Feedback.destroy_all
 User.destroy_all
 
 puts "Creating database..."
-User.create!(
-  email: "a@a.com",
+
+
+user_one = User.create!(
+  email: Faker::Internet.email,
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -16,8 +18,8 @@ User.create!(
   extra_info: Faker::Quote.famous_last_words
 )
 
-user_one = User.create!(
-  email: Faker::Internet.email,
+User.create!(
+  email: "a@a.com",
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -37,15 +39,15 @@ user_one = User.create!(
     work_experience: Faker::Job.title,
     extra_info: Faker::Quote.famous_last_words
   )
-
+  
   videocall = Videocall.create!(
     user_one_id: user_one.id,
     user_two_id: user_two.id
   )
 
-  feedback_user_one = Feedback.create!(
+  Feedback.create!(
     videocall_id: videocall.id,
-    giver_id: user_one.id,
+    giver_id: [user_two.id, user_one.id].sample,
     overall_impression: Faker::Number.within(range: 1..5),
     eye_contact: Faker::Number.within(range: 1..5),
     background_presentation: Faker::Number.within(range: 1..5),
@@ -60,8 +62,8 @@ user_one = User.create!(
   )
 
   feedback_user_two = Feedback.create!(
-    videocall_id: videocall.id,
-    giver_id: user_two.id,
+    videocall_id: Videocall.all.sample.id,
+    giver_id: User.all.sample.id,
     overall_impression: Faker::Number.within(range: 1..5),
     eye_contact: Faker::Number.within(range: 1..5),
     background_presentation: Faker::Number.within(range: 1..5),

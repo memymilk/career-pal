@@ -37,3 +37,15 @@
 .two-px{
 margin-top:2px;
 }
+
+.dashboard-chart{
+  width:100%;
+  min-width: 600px;
+  margin:auto;
+}
+
+.tip{
+  color: $purple-100;
+  font: $body-font;
+  font-weight: 300;
+}

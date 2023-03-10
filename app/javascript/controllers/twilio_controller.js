@@ -19,7 +19,7 @@ export default class extends Controller {
         tracks: localTracks
       });
     }).then(room => {
-      // this.addLocalParticipant(room)
+      this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
     });

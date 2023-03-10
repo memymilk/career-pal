@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container">
-    <%= link_to "#", class: "navbar-brand d-flex" do %>
+    <%= link_to root_path, class: "navbar-brand d-flex" do %>
       <%= image_tag "logo_careerPal_white.svg" %><%= image_tag "logo_careerPal_naming_white.svg" %>
     <% end %>
 
@@ -12,23 +12,28 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Dashboard", "#", class: "nav-link" %>
+            <%= link_to "Dashboard", profile_path() , class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Instructions", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-link">
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "Instructions", _path(), class: "nav-link" %>
+          <%# </li> %>
+          <li class="nav-item form-check form-switch me-5 ms-5">
           <!-- slider //-->
-          <div class="form-check form-switch me-5 ms-5">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Ready for call</label>
-          </div>
+            <%# <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Ready for call</label> %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">
+              <%= link_to videocall_path(Videocall.last), method: :get, class: "nav-link", id: "latest-video-call-btn" do %>
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                Ready for call
+              <% end %>
+            </label>
           <!-- slider end //-->
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Dashboard", profile_path(), class: "dropdown-item my-dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item my-dropdown-item" %>
             </div>
           </li>
         <% else %>

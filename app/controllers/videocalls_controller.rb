@@ -8,8 +8,11 @@ class VideocallsController < ApplicationController
   def create
     # Calling the method to create a token for this call
     generate_twilio_token
-
-
+    #if user.ready >= 2
+    #Videocall.new
+    #@videocall.user_one = User.where(ready?).sample
+    #@videocall.user_two = User.where(ready?).sample
+    #user.videocall
   end
 
   private

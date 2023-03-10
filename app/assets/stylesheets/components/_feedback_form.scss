@@ -2,3 +2,45 @@
   position: absolute;
   transform: scale(0);
 }
+
+.title {
+  color:#514A6B;
+  font-family: $headers-font;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rating label i {
+  display: inline-block;
+  font-size: 25px;
+  color: #D9D2E2;
+  cursor: pointer;
+  margin-right: 10px;
+  opacity: 1
+}
+
+.rating input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.rating label:hover i,
+.rating input:checked ~ label i,
+.rating input:checked ~ label i ~ i:nth-of-type(n) ~ i,
+.rating label:hover ~ label i {
+  opacity: 1;
+  color: #20C997;
+  animation: green-stars .5s ease-in-out;
+}
+
+@keyframes green-stars {
+  0% {
+    color: #D9D2E2;
+  }
+  100% {
+  }
+}
