@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_114420) do
     t.string "first_name"
     t.string "last_name"
     t.text "work_experience"
-    t.string "education"
+    t.text "education"
     t.text "extra_info"
     t.boolean "ready"
     t.integer "queue_pos"

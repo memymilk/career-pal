@@ -3,13 +3,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Overall impression: <%= @overall %>
+      Overall impression
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @feedback.overall_impression  %>
+      <%= render "feedbacks/star_rating", amount: feedback.overall_impression  %>
     </div>
     <div class="col">
-    <span class="tip"><%= @text_overall %></span>
+    <span class="tip"> current average: <%= @scores[:overall_impression] %> </span>
 
     </div>
   </div>
@@ -21,13 +21,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Eye contact: <%= @eye_contact %>
+      Eye contact <%= @eye_contact %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.eye_contact  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_eye_contact %></span>
+     <span class="tip"> current average: <%= @scores[:eye_contact] %> </span>
     </div>
   </div>
 </div>
@@ -38,13 +38,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Your background presentation: <%= @background_presentation %>
+      Your background presentation <%= @background_presentation %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.background_presentation  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_background_presentation %></span>
+     <span class="tip"> current average: <%= @scores[:backgreound_presentation] %> </span>
     </div>
   </div>
 </div>
@@ -55,13 +55,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Problem Solving skills: <%= @problem_solving %>
+      Problem Solving skills <%= @problem_solving %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.problem_solving  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_problem_solving %></span>
+     <span class="tip"> current average: <%= @scores[:problem_solving] %> </span>
     </div>
   </div>
 </div>
@@ -72,13 +72,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Verbal communication: <%= @verbal_communication %>
+      Verbal communication <%= @verbal_communication %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.verbal_communication  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_verbal_communication %></span>
+     <span class="tip"> current average: <%= @scores[:verbal_communication] %> </span>
     </div>
   </div>
 </div>
@@ -89,13 +89,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Body language: <%= @body_language %>
+      Body language <%= @body_language %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.body_language  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_body_language %></span>
+     <span class="tip"> current average: <%= @scores[:body_language] %> </span>
     </div>
   </div>
 </div>
@@ -106,13 +106,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Enthusiasm: <%= @enthusiasm %>
+      Enthusiasm <%= @enthusiasm %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.enthusiasm  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_enthusiasm %></span>
+     <span class="tip"> current average: <%= @scores[:enthusiasm] %> </span>
     </div>
   </div>
 </div>
@@ -123,13 +123,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Professional appearance: <%= @professional_appearance %>
+      Professional appearance <%= @professional_appearance %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.professional_appearance  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_professional_appearance %></span>
+     <span class="tip"> current average: <%= @scores[:professional_appearance] %> </span>
     </div>
   </div>
 </div>
@@ -140,13 +140,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Hireability: <%= @hireability %>
+      Hireability <%= @hireability %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.hireability  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_hireability %></span>
+     <span class="tip">current average: <%= @scores[:hireability] %></span>
     </div>
   </div>
 </div>
@@ -157,13 +157,13 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Confidence: <%= @confidence %>
+      Confidence <%= @confidence %>
     </div>
     <div class="col-3">
       <%= render "feedbacks/star_rating", amount: @feedback.confidence  %>
     </div>
     <div class="col">
-     <span class="tip"> <%= @text_confidence %></span>
+     <span class="tip">current average: <%= @scores[:confidence] %></span>
     </div>
   </div>
 </div>
@@ -175,7 +175,7 @@
 <div class="container mt-3">
   <div class="row align-items-end">
     <div class="col">
-      <strong>Your Pal's observations:</strong><br>
+      <strong>Your Pal's observations</strong><br>
       <div class="mt-2"><%= @feedback.written_feedback  %></div>
 
     </div>
