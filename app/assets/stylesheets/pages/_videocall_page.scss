@@ -1,6 +1,12 @@
+#video-section {
+
+}
 .video {
   border: 1px solid $purple;
   border-radius: 3px;
+}
+.nav-tabs {
+  border-bottom: 0;
 }
 .tab-content {
   background-color: #fff;
@@ -9,13 +15,13 @@
   border-top: 0px solid #fff;
 }
 
-.nav-item .active li {
+.nav-item .active {
   background-color: #fff;
   border: 1px solid $purple;
   border-radius: 3px 3px 0 0;
   border-bottom: 0px solid #fff;
 }
-#question-tab {
+#nav-question {
   ol {
     padding-left: 2.3rem;
     padding-right: 2.3rem;

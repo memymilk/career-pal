@@ -1,10 +1,82 @@
-
-  <div class="container my-5">
-    <div class="row d-flex gap-5 justify-content-center">
-      <div class="col-6">
-        <div id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> "data-twilio-target="mediaDiv">
-        </div>
-      </div>
-        <%= render "cv" %>
+<section id="video-section" class="bg-secondary-50">
+  <div class="container">
+    <!--Countdown-->
+    <div class="row col text-center countown">
+    <h5 class="text-primary"> Time left to switch roles</h5>
+    <h2 class="text-primary">00:00:00</h2>
     </div>
-</div>
+    <div class="row">
+      <!--Video-->
+      <div class="col-md-7 video my-3 p-0" id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+      </div>
+      <div class="col-md-5 my-3">
+
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-question-tab" data-bs-toggle="tab" data-bs-target="#nav-question" type="button" role="tab" aria-controls="nav-question" aria-selected="true">Questions</button>
+            <button class="nav-link" id="nav-career-tab" data-bs-toggle="tab" data-bs-target="#nav-career" type="button" role="tab" aria-controls="nav-career" aria-selected="false">Career</button>
+          </div>
+        <!--Tab Content-->
+          <div class="tab-content pt-3" id="videoCall-tabContent">
+            <!--Questions Tab-->
+            <div class="tab-pane fade show active" id="nav-question" role="tabpanel" aria-labelledby="nav-question-tab">
+              <div class="personal-qs">
+                <p class="p-lead">Personal</p>
+                <ol>
+                  <li><span>Tell me a little bit about yourself.</span><span class="time-suggs">5-10 mins</span></li>
+                  <li><span>Why would like to work at this company?</span><span class="time-suggs">5-10 mins</span></li>
+                  <li><span>What are your strenghts to contribute?</span><span class="time-suggs">5-10 mins</span></li>
+                </ol>
+              </div>
+              <div class="technical-qs">
+                <p class="p-lead">Technical</p>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        1. Question?
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      2. Question?
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. Question?
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Career Tab-->
+            <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab">
+            </div>
+          </div>
+          <%= link_to "Leave Feedback", new_videocall_feedback_path(:videocall_id), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
+
+      </div>
+    </div>
+  </div>
+</section>
