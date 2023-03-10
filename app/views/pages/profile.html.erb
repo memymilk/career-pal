@@ -1,4 +1,4 @@
-<div class="profile-container mt-5" data-controller="chart" data-chart-infodata-value="<%=[@overall.to_json, @eye_contact.to_json, @background_presentation.to_json, @problem_solving.to_json, @verbal_communication.to_json, @body_language.to_json, @enthusiasm.to_json, @professional_appearance.to_json, @hireability.to_json, @confidence.to_json] %>">
+<div class="profile-container mt-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
   <div class="dashboard-head">
     <div><%= render "shared/userinfo" %></div>
     <div><%= render "shared/readiness_card" %></div>
