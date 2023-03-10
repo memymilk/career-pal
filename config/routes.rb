@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
+
   resources :videocalls, only: :show
 
   get "profile", to: "pages#profile", as: :profile
@@ -29,12 +30,10 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :videocalls
+    resources :videocalls, only: :show
   end
 
   resources :videocalls do
     resources :feedbacks, only: %i[new create show]
   end
-
-
 end
