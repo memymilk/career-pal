@@ -2,7 +2,7 @@ class VideocallsController < ApplicationController
   before_action :generate_twilio_token
 
   def show
-    @videocall = VideoCall.find(params[:id])
+    @videocall = Videocall.find(params[:id])
   end
 
   def create
