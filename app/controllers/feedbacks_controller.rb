@@ -11,7 +11,7 @@ class FeedbacksController < ApplicationController
     @feedback.videocall = @videocall
     @feedback.giver = current_user
     if @feedback.save
-      redirect_to root_path
+      redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
     end

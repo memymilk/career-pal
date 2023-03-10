@@ -3,13 +3,13 @@
   transform: scale(0);
 }
 
-.rating{
+.rating {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.rating label i{
+.rating label i {
   display: inline-block;
   font-size: 25px;
   color: #D9D2E2;
