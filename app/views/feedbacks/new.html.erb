@@ -1,20 +1,8 @@
 <div class='container'>
   <div class="row justify-content-center">
-      <h2 class="text-center display-5 py-5 mb-0 title">GREAT JOB!<br>Now give feedback to your pal 😎</h2>
-      <div class="d-flex flex-direction: column px-0">
-        <div class="">
-          <img src="https://images.unsplash.com/photo-1613963931023-5dc59437c8a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80"
-              alt="We hear you" width="750" height="350"
-              class="rounded">
-        </div>
-        <div class="d-flex align-items-center">
-          <p class="text-center my-3">Just take some time to think back to the details of your call and be honest.<br>It will help your pal a lot!<br>
-            We all want to nail that job interview and... make our mum proud!
-          </p>
-       </div>
-      </div>
     <div class="col-12 col-lg-6">
       <div class="bg-white px-5 py-3 my-5 rounded border border-1 text-center">
+      <h2 class="text-center display-5 py-5 mb-0 title">Now it's feedback time!</h2>
         <%= simple_form_for [@videocall, @feedback] do |f| %>
           <div class='my-3'>
             <p>What was your overall impression?</p>
@@ -127,7 +115,7 @@
           </div>
         </div>
         <%= f.input :written_feedback, label: "Please add here anything that could help them improve even more" %>
-        <%= f.submit class: "btn btn-success" %>
+        <%= f.submit "SEND FEEDBACK", class: "btn btn-antje btn-primary btn-primary-antje" %>
       <% end %>
       </div>
     </div>
