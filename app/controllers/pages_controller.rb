@@ -9,76 +9,18 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @my_array = []
-    @overall = []
-    @eye_contact = []
-    @background_presentation = []
-    @verbal_communication = []
-    @body_language = []
-    @enthusiasm = []
-    @professional_appearance = []
-    @hireability = []
-    @confidence = []
-    @problem_solving = []
-    @user = current_user
+    @scores = current_user.average_impression
 
-    @user.videocalls.each do |videocall|
-      videocall.feedbacks.each do |feedback|
-        @my_array << feedback if feedback.giver_id != @user.id
-      end
-    end
-    @feedback_number = @my_array.length
-
-    # user has no feedbacks
-    if @feedback_number != 0
-
-      @my_array.each do |feedback|
-        @overall << feedback.overall_impression
-        @eye_contact << feedback.eye_contact
-        @background_presentation << feedback.background_presentation
-        @verbal_communication << feedback.verbal_communication
-        @body_language << feedback.body_language
-        @enthusiasm << feedback.enthusiasm
-        @professional_appearance << feedback.professional_appearance
-        @hireability << feedback.hireability
-        @confidence << feedback.confidence
-        @problem_solving << feedback.problem_solving
-      end
-
-      @overall = @overall.sum / @feedback_number
-      @eye_contact = @eye_contact.sum / @feedback_number
-      @background_presentation = @background_presentation.sum / @feedback_number
-      @verbal_communication = @verbal_communication.sum / @feedback_number
-      @body_language = @body_language.sum / @feedback_number
-      @enthusiasm = @enthusiasm.sum / @feedback_number
-      @professional_appearance = @professional_appearance.sum / @feedback_number
-      @hireability = @hireability.sum / @feedback_number
-      @confidence = @confidence.sum / @feedback_number
-      @problem_solving = @problem_solving.sum / @feedback_number
-
-    else
-      @overall = 0
-      @eye_contact = 0
-      @background_presentation = 0
-      @verbal_communication = 0
-      @body_language = 0
-      @enthusiasm = 0
-      @professional_appearance = 0
-      @hireability = 0
-      @confidence = 0
-      @problem_solving = 0
-    end
-
-      @text_overall = compare(@overall)
-      @text_eye_contact = compare(@eye_contact)
-      @text_background_presentation = compare(@background_presentation)
-      @text_verbal_communication = compare(@verbal_communication)
-      @text_body_language = compare(@body_language)
-      @text_enthusiasm = compare(@enthusiasm)
-      @text_professional_appearance = compare(@professional_appearance)
-      @text_hireability = compare(@hireability)
-      @text_confidence = compare(@confidence)
-      @text_problem_solving = compare(@problem_solving)
+      @text_overall = compare(@scores[:overall_impression])
+      @text_eye_contact = compare(@scores[:eye_contact])
+      @text_background_presentation = compare(@scores[:background_presentation])
+      @text_verbal_communication = compare(@scores[:verbal_communication])
+      @text_body_language = compare(@scores[:body_language])
+      @text_enthusiasm = compare(@scores[:enthusiasm])
+      @text_professional_appearance = compare(@scores[:professional_appearance])
+      @text_hireability = compare(@scores[:hireability])
+      @text_confidence = compare(@scores[:confidence])
+      @text_problem_solving = compare(@scores[:problem_solving])
     end
 
 
