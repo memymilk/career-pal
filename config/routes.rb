@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   end
 
   resources :videocalls do
-    resources :feedbacks, only: %i[new create]
+    resources :feedbacks, only: %i[new create show]
   end
 
 
