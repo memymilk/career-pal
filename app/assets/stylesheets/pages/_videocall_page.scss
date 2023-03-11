@@ -1,9 +1,33 @@
 #video-section {
+  .chat-btns-btm {
+    position: relative;
+    bottom: 0;
+  }
 
-  #twilio-video {
+  #twilio-remote-video {
     position: relative;
   }
-  #twilio-video > video {
+  .twilio-remote-name {
+    position: absolute;
+    bottom: 16px;
+    left: 14px;
+    span {
+      color: $purple-50;
+      margin-left: 20px;
+      font-size: 1.2em;
+    }
+  }
+  .timer {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    span {
+      color: $purple-50;
+      margin-right: 24px;
+      font-size: 1.2em;
+    }
+  }
+  #twilio-remote-video > video {
     width: 100%;
     padding: 0 12px 0;
   }
@@ -11,8 +35,8 @@
   .video {
     _border: 1px solid #dee2e6;
     _border-radius: 3px;
-    _display: flex;
-    _flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
   }
   .nav-tabs {
     _border-bottom: 0;
@@ -22,6 +46,7 @@
     _border: 1px solid $purple;
     _border-radius: 0 0 3px 3px;
     _border-top: 0px solid #fff;
+    padding: 0 20px 0;
   }
 
   .nav-tabs .nav-link.active {
@@ -31,12 +56,15 @@
     border-bottom: 1px solid #FBFAFC;
   }
 }
+.p-lead {
+  font-size: 0.75em;
+  color: $purple-100;
+}
 
 
 #nav-question {
   ol {
-    padding-left: 2.3rem;
-    padding-right: 1.3rem;
+    padding-left: 1.3rem;
   }
   li {
     line-height: 2.2em;
@@ -46,12 +74,6 @@
     font-size: 0.75em;
     float: right;
     margin-top: 0.75em;
-  }
-  .p-lead {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 0.75em;
-    color: $purple-100;
   }
   .accordion-button::after {
     background-image: url("accordion_icon_folded.svg");

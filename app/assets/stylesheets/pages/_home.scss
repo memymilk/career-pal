@@ -57,6 +57,13 @@
 }
 
 #team-section {
+  h6.subtitle {
+    color: $purple-100;
+    text-transform: uppercase;
+    font-weight: 200;
+    text-transform: capitalize;
+    margin-bottom: 1em;
+  }
 }
 
 #footer {

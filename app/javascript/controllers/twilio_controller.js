@@ -60,7 +60,7 @@ export default class extends Controller {
   disable(){
     console.log("Hello friends");
     console.log(this.mediaDivTarget.children);
-    document.getElementById("-remote-video").children[2].style.display = "none";
+    document.getElementById("twilio-remote-video").children[2].style.display = "none";
     this.mediaDivTarget.children[1].style.display = "none";
   }
 

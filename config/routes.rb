@@ -37,4 +37,6 @@ Rails.application.routes.draw do
   resources :videocalls do
     resources :feedbacks, only: %i[new create show]
   end
+  resources :countdowns, only: :show
+
 end
