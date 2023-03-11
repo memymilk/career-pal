@@ -17,14 +17,14 @@
     margin: 0 auto;
     .circle-home-hero {
       width: 2300px;
-      top: -225px;
+      top: -160px;
       position: relative;
       left: 50%;
       margin-left: -1150px;
     }
   }
   .container {
-    min-height: 600px;
+    min-height: 700px;
     margin-top: -760px;
     position: relative;
   }
@@ -41,6 +41,7 @@
   background-size: 50%;
   .container {
     aspect-ratio: 16 / 5;
+    margin-bottom: 6em;
   }
 }
 .article-1 {
@@ -53,6 +54,9 @@
   .col-md-6 {
     padding-left: 3em;
   }
+}
+
+#team-section {
 }
 
 #footer {
@@ -80,29 +84,31 @@
 .hiw-item {
 
   .hiw-icon {
-    height: 150px;
+    width: 120px;
     img {
       height: 100%;
     }
   }
   .hiw-text {
+    font-size: 0.8em;
     padding: 16px;
     width: 200px;
   }
   .hiw-line {
-    width: 230px;
+    width: 115px;
   }
   .dashed-line-1 {
-    width: 132.5px;
-    height: 102.5px;
+    max-width: 90px;
+    _height: 102.5px;
   }
   .dashed-line-2 {
-    width: 199.5px;
-    height: 98px;
+    max-width: 130px;
+    _height: 98px;
   }
   .dashed-line-3 {
-    width: 159px;
-    height: 102.5px;
+    max-width: 100px;
+    margin-left: 0.5em;
+    _height: 102.5px;
   }
 }
 

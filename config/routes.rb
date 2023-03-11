@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :videocalls, only: :show
 
   get "profile", to: "pages#profile", as: :profile
+  get "instructions", to: "pages#instructions", as: :instructions
 
   # education editing below
   get "profile/education", to: "pages#show_education", as: :show_education

@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   def user_show
   end
 
+  def instructions
+  end
+
   def profile
     @my_array = []
     @overall = []
