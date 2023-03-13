@@ -17,6 +17,8 @@ export default class extends Controller {
     initSweetalert('#sweet-alert-demo', {
       title: "Ready for a call?",
       text: "Great, let's go!",
+      closeButton: true,
+
       // icon: "success"
     }, (value) => {
       console.log(value);
