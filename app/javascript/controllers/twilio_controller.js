@@ -15,11 +15,13 @@ export default class extends Controller {
       audio: true,
       video: {height: 1080, width: 1920},
     }).then(localTracks => {
+      console.log('1st promise')
       return connect(this.tokenValue, {
         tracks: localTracks
       });
     }).then(room => {
-      // this.addLocalParticipant(room)
+      console.log('2nd promise')
+      this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
     });
@@ -48,6 +50,7 @@ export default class extends Controller {
   addParticipantTracks(participant) {
     participant.tracks.forEach(publication => {
       if (publication.track) {
+        console.log('wtf is this')
         this.mediaDivTarget.appendChild(publication.track.attach());
       }
     });
