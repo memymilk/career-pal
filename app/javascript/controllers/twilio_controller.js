@@ -7,7 +7,8 @@ export default class extends Controller {
 
   static targets = ["mediaDiv"]
     static values = {
-    token: String
+    token: String,
+    name: String,
   }
   connect() {
     console.log("Hello",this.element, this.tokenValue)
@@ -19,7 +20,7 @@ export default class extends Controller {
         tracks: localTracks
       });
     }).then(room => {
-      this.addLocalParticipant(room)
+      // this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
     });

@@ -3,6 +3,8 @@ class VideocallsController < ApplicationController
 
   def show
     @videocall = Videocall.find(params[:id])
+    @user_one = @videocall.user_one
+    @user_two = @videocall.user_two
   end
 
   def create
