@@ -22,6 +22,7 @@ $purple-700: #441592;
 $purple-900: #1D017D;
 
 $text-colour: #514A6B;
+$body-bg: rgba(217,210,226,0.1);
 
 $teal: #20C997;
 $teal-100: #D2F4EA;
@@ -33,8 +34,15 @@ $teal-700: #13795B;
 $teal-800: #0D503C;
 $teal-900: #06281E;
 
+$accent: #FBD230;
+$accent-300: #FFDA6A;
+$accent-600: #CC9A06;
+
 // BG-PRIMARY
 
+.bg {
+  background-color: $body-bg;
+}
 .bg-primary {
   background-color: $purple;
 }

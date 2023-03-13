@@ -1,23 +1,34 @@
-<section id="video-section" class="bg-secondary-50">
+
+<section id="video-section">
   <div class="container">
-    <!--Countdown-->
+    <!--Countdown
     <div class="row col text-center countown">
-    <h5 class="text-primary"> Time left to switch roles</h5>
+    <h5 class="text-primary mt-3"> Time left to switch roles</h5>
     <h2 class="text-primary">00:00:00</h2>
-    </div>
+    </div>-->
     <div class="row">
       <!--Video-->
-      <div class="col-md-7 video my-3 p-0" id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+      <div class="col-md-7 my-3 p-0">
+        <div class="video" id="twilio-remote-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+          <span class="twilio-remote-name">
+            <span>Name</span>
+          </span>
+          <span class="timer">
+            <span id="timer" data-controller="countdown-timer" data-countdown-timer-target="time">30:00</span>
+          </span>
+        </div>
       </div>
-      <div class="col-md-5 my-3">
+      <div class="col-md-5 my-3 position-relative">
 
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-question-tab" data-bs-toggle="tab" data-bs-target="#nav-question" type="button" role="tab" aria-controls="nav-question" aria-selected="true">Questions</button>
             <button class="nav-link" id="nav-career-tab" data-bs-toggle="tab" data-bs-target="#nav-career" type="button" role="tab" aria-controls="nav-career" aria-selected="false">Career</button>
           </div>
-        <!--Tab Content-->
+
+          <!--Tab Content-->
           <div class="tab-content pt-3" id="videoCall-tabContent">
+
             <!--Questions Tab-->
             <div class="tab-pane fade show active" id="nav-question" role="tabpanel" aria-labelledby="nav-question-tab">
               <div class="personal-qs">
@@ -70,12 +81,23 @@
                 </div>
               </div>
             </div>
+
             <!--Career Tab-->
             <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab">
+              <div class="education-tab">
+                <p class="p-lead">Education</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate soluta consectetur sequi nobis exercitationem eaque expedita porro veritatis sed officiis?</p>
+              </div>
+              <div class="experience-tab">
+                <p class="p-lead">Experience</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatem, maxime nam optio consectetur ratione porro ipsam quos nihil recusandae?</p>
+              </div>
             </div>
           </div>
-          <%= link_to "Leave Feedback", new_videocall_feedback_path(:videocall_id), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
-
+          <div class="chat-btns-btm d-flex mt-3">
+            <%= link_to "Switch Roles", new_videocall_feedback_path(:video), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" %>
+            <%= link_to "Leave Feedback", new_videocall_feedback_path(:video), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
+          </div>
       </div>
     </div>
   </div>
