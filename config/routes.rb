@@ -34,8 +34,10 @@ Rails.application.routes.draw do
     resources :videocalls, only: :show
   end
 
-  resources :videocalls do
+  resources :videocalls, only: %i[:show] do
     resources :feedbacks, only: %i[new create show]
   end
+
+  get "new_videocall", to: "videocalls#assign_to_call", as: :new_videocall
 
 end

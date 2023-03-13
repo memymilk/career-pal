@@ -7,12 +7,26 @@ class VideocallsController < ApplicationController
 
   def create
     # Calling the method to create a token for this call
-    generate_twilio_token
+    # generate_twilio_token
     #if user.ready >= 2
     #Videocall.new
     #@videocall.user_one = User.where(ready?).sample
     #@videocall.user_two = User.where(ready?).sample
     #user.videocall
+  end
+
+  def assign_to_call
+    @videocall = Videocall.where(user_two_id: nil)[0]
+    if @videocall
+      @videocall.user_two = current_user
+    else
+      @videocall = Videocall.new(user_one: current_user)
+    end
+    if @videocall.save!
+      redirect_to videocall_path(@videocall)
+    else
+      redirect_to root_path, alert: "couldn't connect to videocall"
+    end
   end
 
   private

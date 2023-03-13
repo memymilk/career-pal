@@ -7,9 +7,6 @@ import { application } from "./application"
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
 
-import CountdownController from "./countdown_controller"
-application.register("countdown", CountdownController)
-
 import CountdownTimerController from "./countdown_timer_controller"
 application.register("countdown-timer", CountdownTimerController)
 

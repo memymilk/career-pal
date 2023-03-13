@@ -20,13 +20,14 @@
           <li class="nav-item form-check form-switch me-5">
 
           <!-- slider //-->
-          <form data-controller="toggle-switch">
+          <%# <form data-controller="toggle-switch">
             <label class="toggle">
               <input type="checkbox" id="toggle-switch" data-toggle-target="toggle-switch" data-action="change->toggle-switch#addQueuePos">
               <span class="slider"></span>
               <span class="labels" data-on="Ready For Call" data-off="Unready For Call"></span>
             </label>
-          </form>
+          </form> %>
+          <%= link_to 'new video call', new_videocall_path %>
           <!-- slider end //-->
 
           </li>
