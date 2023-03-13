@@ -7,6 +7,9 @@ import { application } from "./application"
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
 
+import FeedbackFormController from "./feedback_form_controller"
+application.register("feedback-form", FeedbackFormController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
