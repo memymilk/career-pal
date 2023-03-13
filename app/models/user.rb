@@ -16,7 +16,7 @@ class User < ApplicationRecord
       scores.sum.fdiv(scores.length)
     end
     Feedback::AVERAGE_PROPERTIES.each_with_index do |property, index|
-      results[property] = scores[index]
+      results[property] = scores[index].nil? ? 0 : scores[index]
     end
     results
   end

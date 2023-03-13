@@ -20,6 +20,7 @@ class FeedbacksController < ApplicationController
   def show
     @feedback = Feedback.find(params[:id])
     @scores = current_user.average_impression
+
   end
 
   private

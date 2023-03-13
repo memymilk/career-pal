@@ -1,123 +1,150 @@
-<div class='container'>
+<div class='container' data-controller="feedback-form">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-      <div class="bg-white px-5 py-3 my-5 rounded border border-1 text-center">
-      <h2 class="text-center display-5 py-5 mb-0 title">Now it's feedback time!</h2>
-        <%= simple_form_for [@videocall, @feedback] do |f| %>
+      <div class="bg-white px-5 py-3 mt-5 mb-4 rounded border border-1 text-center">
+        <h2 class="text-center display-5 py-4 mb-0 title">Now it's feedback time!</h2>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <%= image_tag "loading.svg", data: { feedback_form_target: 'loading' }, width: 100, height: 100 %>
+  </div>
+  <%= simple_form_for [@videocall, @feedback] do |f| %>
+    <div class="row justify-content-center d-none" data-feedback-form-target="row1">
+      <div class="col-12 col-lg-6">
+        <div class="bg-white px-5 py-3 my-1 rounded border border-1 text-center">
           <div class='my-3'>
             <p>What was your overall impression?</p>
             <div class="rating">
-                <% (1..5).to_a.reverse.each do |i| %>
-                  <%= f.radio_button :overall_impression, i, id: "overall_impression_#{i}", value: "#{i}" %>
-                  <label for=<%= "overall_impression_#{i}" %>>
-                    <div class="align-items-center"><i class="fas fa-star"></i></div>
-                  </label>
-                <% end %>
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :overall_impression, i, id: "overall_impression_#{i}", value: "#{i}" %>
+                <label for=<%= "overall_impression_#{i}" %> >
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
             </div>
           </div>
-        <div class='my-3'>
-          <p>Did your pal make eye-contact with you?</p>
-        <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :eye_contact, i, id: "eye_contact_#{i}", value: "#{i}" %>
-              <label for=<%= "eye_contact_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
+          <div class='my-3'>
+            <p>Did your pal make eye-contact with you?</p>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :eye_contact, i, id: "eye_contact_#{i}", value: "#{i}" %>
+                <label for=<%= "eye_contact_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class='my-3'>
-          <p>How well was their background presented?</p>
-        <div class="rating">
-          <% (1..5).to_a.reverse.each do |i| %>
-            <%= f.radio_button :background_presentation, i, id: "background_presentation_#{i}", value: "#{i}" %>
-            <label for=<%= "background_presentation_#{i}" %>>
-              <i class="fas fa-star"></i>
-            </label>
-          <% end %>
-        </div>
-        </div>
-        <div class='my-3'>
+          <div class='my-3'>
+            <p>How well was their background presented?</p>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :background_presentation, i, id: "background_presentation_#{i}", value: "#{i}" %>
+                <label for=<%= "background_presentation_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <div class='my-3'>
             <p>Please assess your pal's problem solving skills</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-             <%= f.radio_button :problem_solving, i, id: "problem_solving_#{i}", value: "#{i}" %>
-              <label for=<%= "problem_solving_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :problem_solving, i, id: "problem_solving_#{i}", value: "#{i}" %>
+                <label for=<%= "problem_solving_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
           </div>
-        </div>
-        <div class='my-3'>
+          <div class='my-3'>
             <p>How good was their verbal communication?</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :verbal_communication, i, id: "verbal_communication_#{i}", value: "#{i}" %>
-              <label for=<%= "verbal_communication_#{i}" %>>
-               <i class="fas fa-star"></i>
-              </label>
-            <% end %>
+            <div class="rating" data-action="click->feedback-form#showRow2">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :verbal_communication, i, id: "verbal_communication_#{i}", value: "#{i}" %>
+                <label for=<%= "verbal_communication_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
           </div>
         </div>
-        <div class='my-3'>
+      </div>
+    </div>
+
+    <div class="row justify-content-center d-none" data-feedback-form-target="row2">
+      <div class="col-12 col-lg-6">
+        <div class="bg-white px-5 py-3 my-3 rounded border border-1 text-center">
+          <div class='my-3'>
             <p>What about body language?</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :body_language, i, id: "body_language_#{i}", value: "#{i}" %>
-              <label for=<%= "body_language_#{i}" %>>
-               <i class="fas fa-star"></i>
-              </label>
-            <% end %>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :body_language, i, id: "body_language_#{i}", value: "#{i}" %>
+                <label for=<%= "body_language_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <div class='my-3'>
+            <p>Did they show enthusiasm during the call?</p>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :enthusiasm, i, id: "enthusiasm_#{i}", value: "#{i}" %>
+                <label for=<%= "enthusiasm_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <div class='my-3'>
+            <p>Please assess your pal's professional appearance</p>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :professional_appearance, i, id: "professional_appearance_#{i}", value: "#{i}" %>
+                <label for=<%= "professional_appearance_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <div class='my-3'>
+            <p>Did your pal seem confident?</p>
+            <div class="rating">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :confidence, i, id: "confidence_#{i}", value: "#{i}" %>
+                <label for=<%= "confidence_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
+          </div>
+          <div class='my-3'>
+            <p>Would you actually hire them?</p>
+            <div class="rating" data-action="click->feedback-form#showRow3">
+              <% (1..5).to_a.reverse.each do |i| %>
+                <%= f.radio_button :hireability, i, id: "hireability_#{i}", value: "#{i}" %>
+                <label for=<%= "hireability_#{i}" %>>
+                  <i class="fas fa-star"></i>
+                </label>
+              <% end %>
+            </div>
           </div>
         </div>
-        <div class='my-3'>
-          <p>Did they show enthusiasm during the call?</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-            <%= f.radio_button :enthusiasm, i, id: "enthusiasm_#{i}", value: "#{i}" %>
-              <label for=<%= "enthusiasm_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
-          </div>
-        </div>
-        <div class='my-3'>
-          <p>Please assess your pal's professional appearance</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :professional_appearance, i, id: "professional_appearance_#{i}", value: "#{i}" %>
-              <label for=<%= "professional_appearance_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
-          </div>
-        </div>
-        <div class='my-3'>
-          <p>Did your pal seem confident?</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :confidence, i, id: "confidence_#{i}", value: "#{i}" %>
-              <label for=<%= "confidence_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
-          </div>
-        </div>
-        <div class='my-3'>
-          <p>Would you actually hire them?</p>
-          <div class="rating">
-            <% (1..5).to_a.reverse.each do |i| %>
-              <%= f.radio_button :hireability, i, id: "hireability_#{i}", value: "#{i}" %>
-              <label for=<%= "hireability_#{i}" %>>
-                <i class="fas fa-star"></i>
-              </label>
-            <% end %>
-          </div>
-        </div>
-        <%= f.input :written_feedback, label: "Please add here anything that could help them improve even more" %>
+
+        <%= f.input :written_feedback, item_label_class: 'my-custom-class',  label: "Please add here anything that could help them improve even more" %>
         <%= f.submit "SEND FEEDBACK", class: "btn btn-antje btn-primary btn-primary-antje" %>
       <% end %>
       </div>
     </div>
-  </div>
+
+    <div class="row justify-content-center d-none" data-feedback-form-target="row3">
+      <div class="col-12 col-lg-6">
+        <div class="bg-white px-5 py-3 mb-5 rounded border border-1 text-center">
+          <%= f.input :written_feedback ,label: "Please add here anything that could help them improve", label_html: {class: 'simple-form-font'} %>
+          <%= f.submit "SEND FEEDBACK", class: "btn btn-antje btn-primary btn-primary-antje" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
