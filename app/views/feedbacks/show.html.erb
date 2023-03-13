@@ -1,19 +1,27 @@
-<div class="profile-container mt-5">
+<div class="profile-container mt-5" data-controller="chart"
+data-chart-feedback-value="<%= [@feedback.overall_impression, @feedback.eye_contact, @feedback.background_presentation, @feedback.problem_solving, @feedback.verbal_communication, @feedback.body_language, @feedback.enthusiasm, @feedback.professional_appearance, @feedback.hireability, @feedback.confidence ] %>"
+data-chart-infodata-value="<%= @scores.values %>">
   <div class="dashboard-head">
     <div><%= render "shared/userinfo" %></div>
     <div><%= render "shared/readiness_card" %></div>
   </div>
 
 
- <div class="text-center"> <h3 class="mt-5 ms-3 mb-3"><%= image_tag "call.svg", class:"me-2" %> Your Call <%= @feedback.created_at %></h3></div>
+ <div class="text-center"> <h3 class="mt-5 ms-3 mb-3"><%= image_tag "call.svg", class:"me-2" %> Your Call <%= @feedback.created_at.strftime("%Y-%m-%d") %></h3></div>
  <div class="mb-3"><%= link_to "<< back to dashboard", :back, class:"back_link" %></div>
       <div class="card mb-5">
         <div class="mt-4 me-3 space-between flex-end"><%= render "shared/delete" %></div>
 
         <div class="card-text pb-4 ps-4 pe-4 mb-3">
               <!-- single quality block //-->
+              <h5 class="mt-1 ms-1 mb-4">Your pal's impressisons of you for this calll</h5>
+              <hr>
               <%= render "feedbacks/single_feedback", feedback: @feedback, overall: @overall %>
              <!-- single quality block end //-->
+              <h5 class="mt-5 ms-1 mb-4">Compared to your previous calls</h5>
+              <hr>
+              <div class="dashboard-chart"><canvas data-chart-target="radar" id="radar"></canvas></div>
+
 
         </div>
       </div>

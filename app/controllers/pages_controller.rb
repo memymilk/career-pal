@@ -10,20 +10,17 @@ class PagesController < ApplicationController
 
   def profile
     @scores = current_user.average_impression
-
-      @text_overall = compare(@scores[:overall_impression])
-      @text_eye_contact = compare(@scores[:eye_contact])
-      @text_background_presentation = compare(@scores[:background_presentation])
-      @text_verbal_communication = compare(@scores[:verbal_communication])
-      @text_body_language = compare(@scores[:body_language])
-      @text_enthusiasm = compare(@scores[:enthusiasm])
-      @text_professional_appearance = compare(@scores[:professional_appearance])
-      @text_hireability = compare(@scores[:hireability])
-      @text_confidence = compare(@scores[:confidence])
-      @text_problem_solving = compare(@scores[:problem_solving])
-    end
-
-
+    @text_overall = compare(@scores[:overall_impression])
+    @text_eye_contact = compare(@scores[:eye_contact])
+    @text_background_presentation = compare(@scores[:background_presentation])
+    @text_verbal_communication = compare(@scores[:verbal_communication])
+    @text_body_language = compare(@scores[:body_language])
+    @text_enthusiasm = compare(@scores[:enthusiasm])
+    @text_professional_appearance = compare(@scores[:professional_appearance])
+    @text_hireability = compare(@scores[:hireability])
+    @text_confidence = compare(@scores[:confidence])
+    @text_problem_solving = compare(@scores[:problem_solving])
+  end
 
   # education_editing_below
   def show_education
@@ -80,16 +77,18 @@ class PagesController < ApplicationController
   private
 
   def compare(params)
-    if params >= 4
-      "Way to go, you are nailing it!"
-    elsif params < 4 && params >= 3.5
-      "You are on the right track, almost there"
-    elsif params < 3.5 && params >= 1.5
-      "Hmm this is something to pay attention to"
-    elsif params < 1.5 && params > 0
-      "Hey pal, have a look at this one"
-    elsif params == 0
-      ""
+    if params
+      if params >= 4
+        "Way to go, you are nailing it!"
+      elsif params < 4 && params >= 3.5
+        "You are on the right track, almost there"
+      elsif params < 3.5 && params >= 1.5
+        "Hmm this is something to pay attention to"
+      elsif params < 1.5 && params > 0
+        "Hey pal, have a look at this one"
+      else
+        ""
+      end
     end
   end
 end
