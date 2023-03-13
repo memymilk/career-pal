@@ -15,3 +15,10 @@ application.register("twilio", TwilioController)
 
 import VideocardController from "./videocard_controller"
 application.register("videocard", VideocardController)
+
+import CountdownController from "./countdown_controller"
+application.register("countdown", CountdownController)
+
+import CountdownTimerController from "./countdown_timer_controller"
+application.register("countdown_timer", CountdownTimerController)
+
