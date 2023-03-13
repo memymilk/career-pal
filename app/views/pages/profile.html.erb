@@ -27,15 +27,21 @@
       </div>
       <div class="card mb-5">
         <div class="card-text p-4">
-         <h5 class="mt-4 ms-1 mb-4">Your pal's impresisons of you on average</h5>
+         <h5 class="mt-4 ms-1 mb-4">Your pal's impressisons of you on average</h5>
+         <hr>
 
         <!-- average stars  //-->
         <%= render "feedbacks/average_dashboard" %>
         <!-- average stars closes  //-->
           <h5 class="mt-5 ms-2">Same as a graph:</h5>
+          <hr>
         <!-- graph  //-->
           <div class="dashboard-chart"><canvas data-chart-target="acquisitions" id="acquisitions"></canvas></div>
+          <%# <div class="dashboard-chart"><canvas data-chart-target="radar" id="radar"></canvas></div> %>
+
         <!-- graph ends  //-->
+
+
 
         </div>
       </div>

@@ -10,6 +10,9 @@ application.register("chart", ChartController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import SweetalertController from "./sweetalert_controller"
+application.register("sweetalert", SweetalertController)
+
 import TwilioController from "./twilio_controller"
 application.register("twilio", TwilioController)
 
