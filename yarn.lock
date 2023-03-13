@@ -1345,6 +1345,11 @@
     magic-string "^0.25.0"
     string.prototype.matchall "^4.0.6"
 
+"@sweetalert2/themes@^5.0.15":
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/@sweetalert2/themes/-/themes-5.0.15.tgz#e445f0fcf5a04e4183dce3cd5eacf5b1e0b08e1d"
+  integrity sha512-uGU7CynpjRc3cllTqZEvXiZTpfQ6MN4faG+Tf0VFW81bLysCQm00iHS3NJLZx5STRfxpM5SzqeVXpAzJyTG/WA==
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
