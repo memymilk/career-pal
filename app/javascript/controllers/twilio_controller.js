@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-const { connect, createLocalTracks } = require('twilio-remote-video');
+const { connect, createLocalTracks } = require('twilio-video');
 
 
 // Connects to data-controller="twilio"
