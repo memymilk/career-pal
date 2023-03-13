@@ -8,7 +8,6 @@ export default class extends Controller {
   static targets = ["mediaDiv"]
     static values = {
     token: String,
-    name: String,
   }
   connect() {
     console.log("Hello",this.element, this.tokenValue)
