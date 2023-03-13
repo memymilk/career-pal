@@ -7,8 +7,17 @@ import { application } from "./application"
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
 
+import CountdownController from "./countdown_controller"
+application.register("countdown", CountdownController)
+
+import CountdownTimerController from "./countdown_timer_controller"
+application.register("countdown-timer", CountdownTimerController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ToggleSwitchController from "./toggle_switch_controller"
+application.register("toggle-switch", ToggleSwitchController)
 
 import TwilioController from "./twilio_controller"
 application.register("twilio", TwilioController)

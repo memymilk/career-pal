@@ -18,15 +18,17 @@
             <%= link_to "Instructions", instructions_path(), class: "nav-link" %>
           </li>
           <li class="nav-item form-check form-switch me-5">
-          <!-- slider //-->
 
+          <!-- slider //-->
+          <form data-controller="toggle-switch">
             <label class="toggle">
-              <input type="checkbox">
+              <input type="checkbox" id="toggle-switch" data-toggle-target="toggle-switch" data-action="change->toggle-switch#addQueuePos">
               <span class="slider"></span>
               <span class="labels" data-on="Ready For Call" data-off="Unready For Call"></span>
             </label>
-
+          </form>
           <!-- slider end //-->
+
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://images.pexels.com/photos/1520760/pexels-photo-1520760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
