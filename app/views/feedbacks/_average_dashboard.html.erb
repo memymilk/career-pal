@@ -1,12 +1,14 @@
+ <h6 class="ms-2"><%= image_tag "visual_apparance.svg", class:"me-2" %><strong>Visual</strong></h6>
+
  <!-- single quality block //-->
 <div class="container">
   <div class="row align-items-end">
       <div class="col-4">
 
-      Overall impression: <%= @overall %>
+      Overall impression: <%= @scores[:overall_impression].round(2) %>
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @overall.round  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:overall_impression].round   %>
     </div>
     <div class="col">
     <span class="tip"><%= @text_overall %></span>
@@ -21,10 +23,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Eye contact: <%= @eye_contact %>
+      Eye contact: <%= @scores[:eye_contact].round(2) %>
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @eye_contact.round  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:eye_contact].round  %>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_eye_contact %></span>
@@ -33,15 +35,74 @@
 </div>
 <!-- single quality block end //-->
 
+
 <!-- single quality block //-->
 <div class="container mt-3">
   <div class="row align-items-end">
       <div class="col-4">
 
-      Your background presentation: <%= @background_presentation %>
+      Professional appearance: <%= @scores[:professional_appearance].round(2) %>
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @background_presentation.round  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:professional_appearance].round  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_professional_appearance %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Body language: <%= @scores[:body_language].round(2) %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @scores[:body_language].round  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_body_language %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Verbal communication: <%= @scores[:verbal_communication].round(2) %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @scores[:verbal_communication].round  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_verbal_communication %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+ <h6 class="ms-2 mt-5"><%= image_tag "professional_appearance.svg", class:"me-2 mb-1" %> <strong>Professional</strong></h6>
+
+
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Your background presentation: <%= @scores[:background_presentation].round(2) %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @scores[:background_presentation].round  %>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_background_presentation %></span>
@@ -50,15 +111,52 @@
 </div>
 <!-- single quality block end //-->
 
+
 <!-- single quality block //-->
 <div class="container mt-3">
   <div class="row align-items-end">
       <div class="col-4">
 
-      Problem Solving skills: <%= @problem_solving %>
+      Enthusiasm: <%= @scores[:enthusiasm].round(2) %>
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @problem_solving.round  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:enthusiasm].round  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_enthusiasm %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Hireability: <%= @scores[:hireability].round(2) %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @scores[:hireability].round  %>
+    </div>
+    <div class="col">
+     <span class="tip"> <%= @text_hireability %></span>
+    </div>
+  </div>
+</div>
+<!-- single quality block end //-->
+
+
+<!-- single quality block //-->
+<div class="container mt-3">
+  <div class="row align-items-end">
+      <div class="col-4">
+
+      Problem Solving skills: <%= @scores[:problem_solving].round(2) %>
+    </div>
+    <div class="col-3">
+      <%= render "feedbacks/star_rating", amount: @scores[:problem_solving].round  %>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_problem_solving %></span>
@@ -72,95 +170,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Verbal communication: <%= @verbal_communication %>
+      Confidence: <%= @scores[:confidence].round(2) %>
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @verbal_communication.round  %>
-    </div>
-    <div class="col">
-     <span class="tip"> <%= @text_verbal_communication %></span>
-    </div>
-  </div>
-</div>
-<!-- single quality block end //-->
-
-<!-- single quality block //-->
-<div class="container mt-3">
-  <div class="row align-items-end">
-      <div class="col-4">
-
-      Body language: <%= @body_language %>
-    </div>
-    <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @body_language.round  %>
-    </div>
-    <div class="col">
-     <span class="tip"> <%= @text_body_language %></span>
-    </div>
-  </div>
-</div>
-<!-- single quality block end //-->
-
-<!-- single quality block //-->
-<div class="container mt-3">
-  <div class="row align-items-end">
-      <div class="col-4">
-
-      Enthusiasm: <%= @enthusiasm %>
-    </div>
-    <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @enthusiasm.round  %>
-    </div>
-    <div class="col">
-     <span class="tip"> <%= @text_enthusiasm %></span>
-    </div>
-  </div>
-</div>
-<!-- single quality block end //-->
-
-<!-- single quality block //-->
-<div class="container mt-3">
-  <div class="row align-items-end">
-      <div class="col-4">
-
-      Professional appearance: <%= @professional_appearance %>
-    </div>
-    <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @professional_appearance.round  %>
-    </div>
-    <div class="col">
-     <span class="tip"> <%= @text_professional_appearance %></span>
-    </div>
-  </div>
-</div>
-<!-- single quality block end //-->
-
-<!-- single quality block //-->
-<div class="container mt-3">
-  <div class="row align-items-end">
-      <div class="col-4">
-
-      Hireability: <%= @hireability %>
-    </div>
-    <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @hireability.round  %>
-    </div>
-    <div class="col">
-     <span class="tip"> <%= @text_hireability %></span>
-    </div>
-  </div>
-</div>
-<!-- single quality block end //-->
-
-<!-- single quality block //-->
-<div class="container mt-3">
-  <div class="row align-items-end">
-      <div class="col-4">
-
-      Confidence: <%= @confidence %>
-    </div>
-    <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @confidence.round  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:confidence].round  %>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_confidence %></span>

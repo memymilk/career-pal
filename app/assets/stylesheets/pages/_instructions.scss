@@ -1,0 +1,46 @@
+.bg-primary {
+  h1 , p {
+    color: $purple-50;
+  }
+}
+
+.col-md-6 {
+  position: relative;
+}
+
+.instruction-img {
+  width: 100%;
+  _background: radial-gradient(black, black 25%, #370F8C 60%, #370F8C 100%, #370F8C 0%);
+  _background-position: center bottom;
+}
+
+#instruction-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+  p {
+    font-size: 1.25em;
+  }
+  h1 {
+    _line-height: 0.85em;
+    margin-bottom: 0.5em;
+  }
+  h1, p {
+    color: #fff;
+  }
+  .hero-img {
+    margin: 0 auto;
+    .circle-home-hero {
+      width: 2300px;
+      top: -160px;
+      position: relative;
+      left: 50%;
+      margin-left: -1150px;
+    }
+  }
+  .container {
+    min-height: 700px;
+    margin-top: -760px;
+    position: relative;
+  }
+}

@@ -1,23 +1,34 @@
-<section id="video-section" class="bg-secondary-50">
+
+<section id="video-section">
   <div class="container">
-    <!--Countdown-->
+    <!--Countdown
     <div class="row col text-center countown">
-    <h5 class="text-primary"> Time left to switch roles</h5>
+    <h5 class="text-primary mt-3"> Time left to switch roles</h5>
     <h2 class="text-primary">00:00:00</h2>
-    </div>
+    </div>-->
     <div class="row">
       <!--Video-->
-      <div class="col-md-7 video my-3 p-0" id="twilio-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+      <div class="col-md-7 my-3 p-0">
+        <div class="video" id="twilio-remote-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+          <span class="twilio-remote-name">
+            <span>Name</span>
+          </span>
+          <span class="timer">
+            <span id="timer" data-controller="countdown-timer" data-countdown-timer-target="time">30:00</span>
+          </span>
+        </div>
       </div>
-      <div class="col-md-5 my-3">
+      <div class="col-md-5 my-3 position-relative">
 
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-question-tab" data-bs-toggle="tab" data-bs-target="#nav-question" type="button" role="tab" aria-controls="nav-question" aria-selected="true">Questions</button>
             <button class="nav-link" id="nav-career-tab" data-bs-toggle="tab" data-bs-target="#nav-career" type="button" role="tab" aria-controls="nav-career" aria-selected="false">Career</button>
           </div>
-        <!--Tab Content-->
+
+          <!--Tab Content-->
           <div class="tab-content pt-3" id="videoCall-tabContent">
+
             <!--Questions Tab-->
             <div class="tab-pane fade show active" id="nav-question" role="tabpanel" aria-labelledby="nav-question-tab">
               <div class="personal-qs">
@@ -25,7 +36,7 @@
                 <ol>
                   <li><span>Tell me a little bit about yourself.</span><span class="time-suggs">5-10 mins</span></li>
                   <li><span>Why would like to work at this company?</span><span class="time-suggs">5-10 mins</span></li>
-                  <li><span>What are your strenghts to contribute?</span><span class="time-suggs">5-10 mins</span></li>
+                  <li><span>What are your strenghts and weaknesses?</span><span class="time-suggs">5-10 mins</span></li>
                 </ol>
               </div>
               <div class="technical-qs">
@@ -34,48 +45,79 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                        1. Question?
+                        How do you iterate over an array in JavaScript?
                       </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>With Array.forEach.</strong>
+                        <br>
+                        <code>const beatles = ["paul", "john", "ringo", "george"];</code>
+                        <br>
+                        <code>beatles.forEach((beatle) => {</code>
+                        <br>
+                        <code>console.log(beatle.toUpperCase());</code>
+                        <br>
+                        <code>});</code>
                       </div>
                     </div>
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      2. Question?
+                      How do you Create (CRUD) in SQL?
                       </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <strong>Using the INSERT INTO keyword:</strong>
+                        <br>
+                        <code>INSERT INTO doctors (name, age, specialty)</code>
+                        <br>
+                        <code>VALUES ('Dr House', 42, 'Diagnostic Medicine');</code>
                       </div>
                     </div>
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        3. Question?
+                        What are CRUD operations on an array in Javascript?
                       </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <code>const fruits = [];</code>
+                        <br>
+                        <code>fruits.push("Apple"); // Create</code>
+                        <br>
+                        <code>fruits[0];            // Read</code>
+                        <br>
+                        <code>fruits[0] = "Banana"; // Update</code>
+                        <br>
+                        <code>fruits.splice(0, 1);  // Delete. Remove one item at index 0</code>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
             <!--Career Tab-->
             <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab">
+              <div class="education-tab">
+                <p class="p-lead">Education</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate soluta consectetur sequi nobis exercitationem eaque expedita porro veritatis sed officiis?</p>
+              </div>
+              <div class="experience-tab">
+                <p class="p-lead">Experience</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim voluptatem, maxime nam optio consectetur ratione porro ipsam quos nihil recusandae?</p>
+              </div>
             </div>
           </div>
-          <%= link_to "Leave Feedback", new_videocall_feedback_path(@videocall), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
-
+          <div class="chat-btns-btm d-flex mt-3">
+            <%= link_to "Switch Roles", new_videocall_feedback_path(:video), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" %>
+            <%= link_to "Leave Feedback", new_videocall_feedback_path(:video), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
+          </div>
       </div>
     </div>
   </div>

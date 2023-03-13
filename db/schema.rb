@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_10_114420) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_112503) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_114420) do
     t.string "first_name"
     t.string "last_name"
     t.text "work_experience"
-    t.string "education"
+    t.text "education"
     t.text "extra_info"
     t.boolean "ready"
     t.integer "queue_pos"
