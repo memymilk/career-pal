@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
     @user = User.new
     redirect_to profile_path if user_signed_in?
-
   end
 
   def user_show
@@ -91,13 +90,13 @@ class PagesController < ApplicationController
       elsif params < 4 && params >= 3.5
         "You are on the right track, almost there"
       elsif params < 3.5 && params >= 2.5
-        "A bit more love for this!"
-      elsif params < 2.5 && params >= 1.5
+        "A bit more love for this"
+      elsif params < 2.5 && params >= 2
         "Hey pal, have a look at this one"
-      elsif params < 1.5 && params > 0
+      elsif params < 2 && params >= 1.7
         "Hey pal, have a look at this one"
       else
-        ""
+        "Let's really look into this!"
       end
     end
   end
