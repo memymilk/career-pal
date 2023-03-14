@@ -19,16 +19,11 @@ export default class extends Controller {
         tracks: localTracks
       });
     }).then(room => {
-      // this.addLocalParticipant(room)
+      this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
+      this.nameTarget.classList.remove('d-none')
     });
-  }
-
-  hideVideo(){
-    this.mediaDivTarget.children[1].style.display = "none";
-    this.mediaDivTarget.children[1].hidden = "true";
-    document.getElementById("twilio-remote-video").children[1].style.display = "none"
   }
 
   addLocalParticipant(room) {
@@ -56,12 +51,4 @@ export default class extends Controller {
       this.mediaDivTarget.appendChild(track.attach());
     });
   }
-
-  disable(){
-    console.log("Hello friends");
-    console.log(this.mediaDivTarget.children);
-    document.getElementById("twilio-remote-video").children[2].style.display = "none";
-    this.mediaDivTarget.children[1].style.display = "none";
-  }
-
 }
