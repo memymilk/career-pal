@@ -2,7 +2,6 @@ import { Controller } from "@hotwired/stimulus"
 
 const { connect, createLocalVideoTrack, createLocalTracks } = require('twilio-video');
 
-
 // Connects to data-controller="twilio"
 export default class extends Controller {
 
