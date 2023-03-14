@@ -13,6 +13,7 @@ export default class extends Controller {
 
   showRow2() {
     this.row2Target.classList.remove('d-none')
+    this.row1Target.classList.add('d-none')
   }
 
   showRow3() {
