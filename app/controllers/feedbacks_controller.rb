@@ -18,9 +18,9 @@ class FeedbacksController < ApplicationController
   end
 
   def show
-    @feedback = Feedback.find(params[:id])
+    @videocall = Videocall.find(params[:id])
+    @feedback = @videocall.reject { |el| el.giver_id == current_user.id }
     @scores = current_user.average_impression
-
   end
 
   private

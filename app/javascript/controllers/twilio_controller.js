@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-
-const { connect, createLocalVideoTrack, createLocalTracks } = require('twilio-video');
+const { connect, createLocalTracks } = require('twilio-video');
 
 // Connects to data-controller="twilio"
 export default class extends Controller {
@@ -15,14 +14,15 @@ export default class extends Controller {
       audio: true,
       video: {height: 1080, width: 1920},
     }).then(localTracks => {
+      console.log('1st promise')
       return connect(this.tokenValue, {
         tracks: localTracks
       });
     }).then(room => {
+      console.log('2nd promise')
       this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
-      this.previewLocalTrack(room.localParticipant);
     });
   }
 
@@ -44,6 +44,7 @@ export default class extends Controller {
     let i = 0
     participant.tracks.forEach(publication => {
       if (publication.track) {
+        console.log('wtf is this')
         this.mediaDivTarget.appendChild(publication.track.attach());
       }
     });

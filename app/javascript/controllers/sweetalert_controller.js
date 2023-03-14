@@ -15,9 +15,11 @@ export default class extends Controller {
     };
 
     initSweetalert('#sweet-alert-demo', {
-      title: "A nice alert",
-      text: "This is a great alert, isn't it?",
-      icon: "success"
+      title: "Ready for a call?",
+      text: "Great, let's go!",
+      closeButton: true,
+
+      // icon: "success"
     }, (value) => {
       console.log(value);
     });

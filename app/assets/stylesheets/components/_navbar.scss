@@ -12,6 +12,14 @@
   height: 15px;
   margin-right: 5px;
 }
+.navbar-toggler {
+  border: 1px solid $purple;
+  .navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+  }
+}
+
 
 .form-switch {
   .form-check-label {
