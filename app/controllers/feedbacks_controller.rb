@@ -20,12 +20,11 @@ class FeedbacksController < ApplicationController
   def show
     @feedback = Feedback.find(params[:id])
     @scores = current_user.average_impression
-
   end
 
   private
 
   def feedback_params
-    params.require(:feedback).permit(:written_feedback, :overall_impression, :eye_contact, :background_presentation, :problem_solving, :verbal_communication, :body_language, :enthusiasm, :professional_appearance, :hireability, :confidence, :feedback_id)
+    params.require(:feedback).permit(:written_feedback, :overall_impression, :eye_contact, :background_presentation, :problem_solving, :verbal_communication, :body_language, :enthusiasm, :professional_appearance, :hireability, :confidence)
   end
 end
