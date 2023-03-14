@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def test
-  end 
+  end
 
   def profile
     @scores = current_user.average_impression
@@ -90,8 +90,10 @@ class PagesController < ApplicationController
         "Way to go, you are nailing it!"
       elsif params < 4 && params >= 3.5
         "You are on the right track, almost there"
-      elsif params < 3.5 && params >= 1.5
-        "Hmm this is something to pay attention to"
+      elsif params < 3.5 && params >= 2.5
+        "A bit more love for this!"
+      elsif params < 2.5 && params >= 1.5
+        "Hey pal, have a look at this one"
       elsif params < 1.5 && params > 0
         "Hey pal, have a look at this one"
       else
