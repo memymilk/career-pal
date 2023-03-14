@@ -6,9 +6,13 @@ class User < ApplicationRecord
   has_many :videocalls, class_name: "Videocall", foreign_key: :user_one, dependent: :destroy
   has_many :videocalls, class_name: "Videocall", foreign_key: :user_two, dependent: :destroy
   has_many :feedbacks_as_giver, class_name: "Feedback", foreign_key: :giver_id
-  has_many :feedbacks_as_receiver, through: :videocalls, source: :feedbacks
+  # has_many :feedbacks_as_receiver, through: :videocalls, source: :feedbacks
   # has_many :feedbacks_as_receiver, class_name: "Feedback", foreign_key: :receiver_id
 
+  def feedbacks_as_receiver
+    @videocalls = Videocall.where(user_one_id: id).or(Videocall.where(user_two_id: id))
+    @feedbacks = @videocalls.map(&:feedbacks).flatten.reject { |feedback| feedback.giver_id == id }
+  end
 
   def average_impression
     results = {}

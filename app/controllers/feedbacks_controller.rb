@@ -18,14 +18,13 @@ class FeedbacksController < ApplicationController
   end
 
   def show
-    @videocall = Videocall.find(params[:videocall_id])
-    @feedback = @videocall.feedbacks.reject { |el| el.giver_id == current_user.id }[0]
+    @feedback = Feedback.find(params[:id])
     @scores = current_user.average_impression
   end
 
   private
 
   def feedback_params
-    params.require(:feedback).permit(:written_feedback, :overall_impression, :eye_contact, :background_presentation, :problem_solving, :verbal_communication, :body_language, :enthusiasm, :professional_appearance, :hireability, :confidence, :feedback_id)
+    params.require(:feedback).permit(:written_feedback, :overall_impression, :eye_contact, :background_presentation, :problem_solving, :verbal_communication, :body_language, :enthusiasm, :professional_appearance, :hireability, :confidence)
   end
 end

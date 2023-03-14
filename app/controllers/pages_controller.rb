@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def instructions
   end
 
+  def test
+  end 
+
   def profile
     @scores = current_user.average_impression
     @text_overall = compare(@scores[:overall_impression])
