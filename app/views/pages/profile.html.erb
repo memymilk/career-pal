@@ -136,3 +136,24 @@
     </div>
   </div>
 </div>
+
+
+ <!-- Modal -->
+              <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modalLabel">We have found your Pal!</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-action="click->toggle-switch#deactivateBtn"></button>
+                    </div>
+                    <div class="modal-body">
+                    Are your ready to start the call?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje" data-action="click->toggle-switch#deactivateBtn" data-bs-dismiss="modal">Close</button>
+                      <%= link_to 'Start Video Call', new_videocall_path, class:"btn btn-secondary btn-secondary-antje" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
