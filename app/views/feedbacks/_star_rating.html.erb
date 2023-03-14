@@ -1,24 +1,9 @@
-<% if (amount - amount.round) == 0 %>
-  <% amount.round.times do %>
-    <%= image_tag "star_filled.svg" %>
-  <% end %>
-  <% (5 - amount.round).times do %>
-    <%= image_tag "star_empty.svg" %>
-  <% end %>
-<% else %>
-  <% (amount.round - 1).times do %>
-    <%= image_tag "star_filled.svg" %>
-  <% end %>
-
-  <%= image_tag "star_semi.svg" %>
-
-  <% if amount.round - amount >= 0.5 %>
-    <% (5 - amount.round).times do %>
-      <%= image_tag "star_empty.svg" %>
-    <% end %>
-  <% else %>
-    <% (4 - amount.round).times do %>
-      <%= image_tag "star_empty.svg" %>
-    <% end %>
-  <% end %>
+<% amount.floor.times do  %>
+ <%= image_tag "star_filled.svg" %>
+ <% end %>
+ <% if (amount - amount.floor) > 0 %>
+     <%= image_tag "star_semi.svg" %>
+<% end %>
+<% (5 - amount.ceil).times do  %>
+<%= image_tag "star_empty.svg" %>
 <% end %>

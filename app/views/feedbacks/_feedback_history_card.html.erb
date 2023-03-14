@@ -6,9 +6,8 @@
       </h5>
     </div>
     <div class="card-text ps-4 pe-4 pb-2 space-between">
-      <div><p style="display:flex;align-items:center">Your pal's overall impression from the call: <span style="margin-bottom:3px" class="ms-2"><%= render "feedbacks/star_rating", amount: feedback.overall_impression %></span></p></div>
-
-      <%= link_to "See details",  videocall_feedback_path(feedback.videocall, feedback), class:"stretched-link" %>
+      <div><p style="display:flex;align-items:center">Your pal's general impression from the call: <span style="margin-bottom:3px" class="ms-2"><%= render "feedbacks/star_rating", amount: (feedback.overall_impression + feedback.eye_contact + feedback.background_presentation + feedback.problem_solving + feedback.verbal_communication + feedback.body_language + feedback.enthusiasm + feedback.professional_appearance + feedback.hireability + feedback.confidence)/10.to_f %></span> <span class="ms-2"><%= (feedback.overall_impression + feedback.eye_contact + feedback.background_presentation + feedback.problem_solving + feedback.verbal_communication + feedback.body_language + feedback.enthusiasm + feedback.professional_appearance + feedback.hireability + feedback.confidence)/10.to_f.round(2)%></span></p></div>
+      <%= link_to "See details", videocall_feedback_path(feedback.videocall, feedback), class:"stretched-link" %>
     </div>
   </div>
 <% end %>
