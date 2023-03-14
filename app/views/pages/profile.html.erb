@@ -74,7 +74,7 @@
           <h3 class="mt-5 ms-3 mb-3"><%= image_tag "work.svg", class:"me-2" %> My work experience</h3></div>
           <% frame_id = dom_id(current_user, "work_experience") %>
           <%= turbo_frame_tag "edit_work_experience" do %>
-            <div class="mb-3 mt-5 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_work_experience_path, turbo_frame: frame_id %></div>
+            <div class="mb-3 mt-5 me-3 space-between flex-end deletion"><%= render "shared/edit", path: edit_profile_work_experience_path, turbo_frame: frame_id %></div>
           <% end %>
         </div>
         <div class="card mb-5">
@@ -96,7 +96,7 @@
           <h3 class="ms-3 mb-3"><%= image_tag "education.svg", class:"me-2" %> My education</h3></div>
           <% frame_id = dom_id(current_user, "education") %>
           <%= turbo_frame_tag "edit_education" do %>
-            <div class="mb-3 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_education_path, turbo_frame: frame_id %></div>
+            <div class="mb-3 me-3 space-between flex-end deletion"><%= render "shared/edit", path: edit_profile_education_path, turbo_frame: frame_id %></div>
           <% end %>
         </div>
 
@@ -117,7 +117,7 @@
           <h3 class="ms-3 mb-3"><%= image_tag "info.svg", class:"me-2" %> Other info</h3></div>
           <% frame_id = dom_id(current_user, "extra_info") %>
           <%= turbo_frame_tag "edit_extra_info" do %>
-          <div class="mb-3 me-3 space-between flex-end"><%= render "shared/edit", path: edit_profile_extra_info_path, turbo_frame: frame_id %></div>
+          <div class="mb-3 me-3 space-between flex-end deletion"><%= render "shared/edit", path: edit_profile_extra_info_path, turbo_frame: frame_id %></div>
           <% end %>
         </div>
         <div class="card mb-5">
