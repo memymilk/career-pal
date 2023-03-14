@@ -1,16 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 const { connect, createLocalTracks } = require('twilio-video');
 
-
 // Connects to data-controller="twilio"
 export default class extends Controller {
 
-  static targets = ["mediaDiv"]
+    static targets = ["mediaDiv"]
     static values = {
     token: String,
   }
   connect() {
-    console.log("Hello",this.element, this.tokenValue)
+    console.log("Hello",this.element, this.tokenValue);
     createLocalTracks({
       audio: true,
       video: {height: 1080, width: 1920},
@@ -25,12 +24,6 @@ export default class extends Controller {
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
     });
-  }
-
-  hideVideo(){
-    this.mediaDivTarget.children[1].style.display = "none";
-    this.mediaDivTarget.children[1].hidden = "true";
-    document.getElementById("twilio-remote-video").children[1].style.display = "none"
   }
 
   addLocalParticipant(room) {
@@ -48,6 +41,7 @@ export default class extends Controller {
   }
 
   addParticipantTracks(participant) {
+    let i = 0
     participant.tracks.forEach(publication => {
       if (publication.track) {
         console.log('wtf is this')
@@ -60,11 +54,10 @@ export default class extends Controller {
     });
   }
 
-  disable(){
-    console.log("Hello friends");
-    console.log(this.mediaDivTarget.children);
-    document.getElementById("twilio-remote-video").children[2].style.display = "none";
-    this.mediaDivTarget.children[1].style.display = "none";
+  previewLocalTrack(participant) {
+    createLocalVideoTrack().then(localVideoTrack => {
+      const videoElement = localVideoTrack.attach();
+      this.mediaDivTarget.appendChild(videoElement);
+    });
   }
-
 }
