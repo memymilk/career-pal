@@ -18,8 +18,8 @@ class FeedbacksController < ApplicationController
   end
 
   def show
-    @videocall = Videocall.find(params[:id])
-    @feedback = @videocall.reject { |el| el.giver_id == current_user.id }
+    @videocall = Videocall.find(params[:videocall_id])
+    @feedback = @videocall.feedbacks.reject { |el| el.giver_id == current_user.id }[0]
     @scores = current_user.average_impression
   end
 
