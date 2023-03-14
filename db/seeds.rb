@@ -13,8 +13,8 @@ user_one = User.create!(
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  education: Faker::Job.education_level,
-  work_experience: Faker::Job.title,
+  education: "#{Faker::Job.education_level} at #{Faker::Educator.university}, from #{Faker::Date.between(from: '2008-09-23', to: '2008-09-25')} to #{Faker::Date.between(from: '2013-09-2', to: '2013-09-25')}",
+  work_experience: "#{Faker::Job.title} at #{Faker::Company.name}, from #{Faker::Date.between(from: '2014-09-23', to: '2014-09-25')} to #{Faker::Date.between(from: '2016-09-2', to: '2016-09-25')}",
   extra_info: Faker::Quote.famous_last_words
 )
 
@@ -23,8 +23,8 @@ User.create!(
   password: "123456",
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  education: Faker::Job.education_level,
-  work_experience: Faker::Job.title,
+  education: "#{Faker::Job.education_level} at #{Faker::Educator.university}, from #{Faker::Date.between(from: '2008-09-23', to: '2008-09-25')} to #{Faker::Date.between(from: '2013-09-2', to: '2013-09-25')}",
+  work_experience: "#{Faker::Job.title} at #{Faker::Company.name}, from #{Faker::Date.between(from: '2014-09-23', to: '2014-09-25')} to #{Faker::Date.between(from: '2016-09-2', to: '2016-09-25')}",
   extra_info: Faker::Quote.famous_last_words
 )
 
@@ -35,11 +35,11 @@ User.create!(
     password: "123456",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    education: Faker::Job.education_level,
-    work_experience: Faker::Job.title,
+    education: "#{Faker::Job.education_level} at #{Faker::Educator.university}, from #{Faker::Date.between(from: '2008-09-23', to: '2008-09-25')} to #{Faker::Date.between(from: '2013-09-2', to: '2013-09-25')}",
+    work_experience: "#{Faker::Job.title} at #{Faker::Company.name}, from #{Faker::Date.between(from: '2014-09-23', to: '2014-09-25')} to #{Faker::Date.between(from: '2016-09-2', to: '2016-09-25')}",
     extra_info: Faker::Quote.famous_last_words
   )
-  
+
   videocall = Videocall.create!(
     user_one_id: user_one.id,
     user_two_id: user_two.id

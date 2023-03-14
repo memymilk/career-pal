@@ -1,4 +1,18 @@
-a.back_link{
+.back_link{
   letter-spacing:0rem!important;
   text-decoration:none!important;
 }
+
+.deletion a{
+  text-decoration:none!important;
+  letter-spacing:0rem!important;
+}
+
+.grow-feedback {
+  transition: all .2s ease-in-out;
+  }
+
+  .grow-feedback:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  }

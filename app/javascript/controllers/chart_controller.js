@@ -25,7 +25,7 @@ export default class extends Controller {
   }
 
   createChart() {
-    console.log("I have been created yo")
+    console.log("I am here yoyoyo")
 
     new Chart(this.acquisitionsTarget, {
       type: 'bar',
@@ -35,16 +35,25 @@ export default class extends Controller {
           {
             label: 'Your points on average',
             data: this.infodataValue,
-            borderColor: 'red',
+            borderColor: 'rgb(162, 136, 198)',
             backgroundColor: '#C0B0D6',
 
           }
         ]
       },
       options: {
+        scales: {
+          x: {
+            min: 0,
+            max: 5,
+          }},
+
+
         layout: {
             padding: 20
         },
+
+        indexAxis: 'y',
         plugins: {
           legend: {
               labels: {
