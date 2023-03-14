@@ -20,6 +20,13 @@ class FeedbacksController < ApplicationController
   def show
     @feedback = Feedback.find(params[:id])
     @scores = current_user.average_impression
+
+  end
+
+  def destroy
+    @feedback = Feedback.find(params[:id])
+    @feedback.destroy
+    redirect_to profile_path
   end
 
   private
