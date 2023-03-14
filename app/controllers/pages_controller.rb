@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @user = User.new
-    redirect_to profile_path if user_signed_in?
+    # redirect_to profile_path if user_signed_in?
   end
 
   def user_show
