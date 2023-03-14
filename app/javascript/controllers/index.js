@@ -28,3 +28,4 @@ application.register("twilio", TwilioController)
 
 import VideocardController from "./videocard_controller"
 application.register("videocard", VideocardController)
+

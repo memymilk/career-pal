@@ -1,20 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 const { connect, createLocalTracks } = require('twilio-video');
 
-
 // Connects to data-controller="twilio"
 export default class extends Controller {
 
-  static targets = ["mediaDiv"]
+    static targets = ["mediaDiv"]
     static values = {
     token: String,
   }
   connect() {
-    console.log("Hello",this.element, this.tokenValue)
+    console.log("Hello",this.element, this.tokenValue);
     createLocalTracks({
       audio: true,
       video: {height: 1080, width: 1920},
     }).then(localTracks => {
+      console.log('1st promise')
       return connect(this.tokenValue, {
         tracks: localTracks
       });
@@ -41,8 +41,10 @@ export default class extends Controller {
   }
 
   addParticipantTracks(participant) {
+    let i = 0
     participant.tracks.forEach(publication => {
       if (publication.track) {
+        console.log('wtf is this')
         this.mediaDivTarget.appendChild(publication.track.attach());
       }
     });

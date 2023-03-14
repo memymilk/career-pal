@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile", as: :profile
   get "instructions", to: "pages#instructions", as: :instructions
 
+  #testing page
+  get "test", to: "pages#test", as: :test
+
   # education editing below
   get "profile/education", to: "pages#show_education", as: :show_education
   get "profile/edit_education", to: "pages#edit_education", as: :edit_profile_education
@@ -34,7 +37,11 @@ Rails.application.routes.draw do
     resources :videocalls, only: :show
   end
 
-  resources :videocalls, only: %i[:show] do
+
+  resources :feedbacks, only: %i[destroy]
+
+
+  resources :videocalls, only: %i[show] do
     resources :feedbacks, only: %i[new create show]
   end
 
