@@ -20,15 +20,40 @@
           <li class="nav-item form-check form-switch me-5">
 
           <!-- slider //-->
-          <%# <form data-controller="toggle-switch">
-            <label class="toggle">
-              <input type="checkbox" id="toggle-switch" data-toggle-target="toggle-switch" data-action="change->toggle-switch#addQueuePos">
-              <span class="slider"></span>
-              <span class="labels" data-on="Ready For Call" data-off="Unready For Call"></span>
-            </label>
-          </form> %>
-          <%= link_to 'new video call', new_videocall_path %>
+          <% unless (params[:controller].include?("videocalls")) %>
+            <div data-controller="toggle-switch">
+              <form>
+                <label class="toggle" for="toggle-switch" data-action="click->toggle-switch#switchBtn">
+                  <input type="checkbox" id="toggle-switch" data-toggle-switch-target="button" data-bs-toggle="modal" data-bs-target="#modal">
+                  <span class="slider"></span>
+                  <span class="labels" data-on="Ready For Call" data-off="Unready For Call"></span>
+                </label>
+              </form>
+
+              <!-- Modal -->
+              <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modalLabel">We have found your Pal!</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-action="click->toggle-switch#deactivateBtn"></button>
+                    </div>
+                    <div class="modal-body">
+                    Are your ready to start the call?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje" data-action="click->toggle-switch#deactivateBtn" data-bs-dismiss="modal">Close</button>
+                      <%= link_to 'Start Video Call', new_videocall_path, class:"btn btn-secondary btn-secondary-antje" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
           <!-- slider end //-->
+
+          <!--<%= link_to 'new video call', new_videocall_path %>-->
 
           </li>
           <li class="nav-item dropdown">

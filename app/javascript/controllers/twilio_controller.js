@@ -19,10 +19,10 @@ export default class extends Controller {
         tracks: localTracks
       });
     }).then(room => {
-      console.log('2nd promise')
       this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
+      this.nameTarget.classList.remove('d-none')
     });
   }
 
@@ -51,13 +51,6 @@ export default class extends Controller {
 
     participant.on('trackSubscribed', track => {
       this.mediaDivTarget.appendChild(track.attach());
-    });
-  }
-
-  previewLocalTrack(participant) {
-    createLocalVideoTrack().then(localVideoTrack => {
-      const videoElement = localVideoTrack.attach();
-      this.mediaDivTarget.appendChild(videoElement);
     });
   }
 }
