@@ -12,6 +12,7 @@ class User < ApplicationRecord
   # has_many :feedbacks_as_receiver, through: :videocalls, source: :feedbacks
   # has_many :feedbacks_as_receiver, class_name: "Feedback", foreign_key: :receiver_id
 
+
   def feedbacks_as_receiver
     @videocalls = Videocall.where(user_one_id: id).or(Videocall.where(user_two_id: id))
     @feedbacks = @videocalls.map(&:feedbacks).flatten.reject { |feedback| feedback.giver_id == id }
