@@ -1,10 +1,7 @@
 .navbar-lewagon {
-  z-index: 100;
   justify-content: space-between;
   background: white;
-  position: -webkit-sticky;
-  position: sticky;
-	top: 0;
+  position: absolute;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,10 +19,6 @@
     width: 1em;
     height: 1em;
   }
-}
-
-.avatar-pointer{
-cursor: pointer;
 }
 
 
