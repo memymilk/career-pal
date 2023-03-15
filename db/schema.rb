@@ -72,11 +72,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_093649) do
     t.index ["videocall_id"], name: "index_feedbacks_on_videocall_id"
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "questions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -96,7 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_093649) do
     t.string "first_name"
     t.string "last_name"
     t.text "work_experience"
-    t.text "education"
+    t.string "education"
     t.text "extra_info"
     t.boolean "ready"
     t.integer "queue_pos"
