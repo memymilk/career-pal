@@ -86,13 +86,15 @@ class PagesController < ApplicationController
   def compare(params)
     if params
       if params >= 4
-        "Way to go, you are nailing it!"
-      elsif params < 4 && params >= 3.5
+        "Nailing it!"
+      elsif params < 4 && params >= 3.7
+        "Way to go, yout mum can be proud"
+      elsif params < 3.7 && params >= 3
         "You are on the right track, almost there"
-      elsif params < 3.5 && params >= 2.5
+      elsif params < 3 && params >= 2.5
         "A bit more love for this"
       elsif params < 2.5 && params >= 2
-        "Hey pal, have a look at this one"
+        "Hmm a bit more attention here"
       elsif params < 2 && params >= 1.7
         "Hey pal, have a look at this one"
       else
