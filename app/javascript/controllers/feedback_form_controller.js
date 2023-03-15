@@ -8,7 +8,7 @@ export default class extends Controller {
     setTimeout(() => {
       this.row1Target.classList.remove('d-none')
       this.loadingTarget.classList.add('d-none')
-    }, 3000)
+    }, 2000)
   }
 
   showRow2() {
@@ -18,5 +18,6 @@ export default class extends Controller {
 
   showRow3() {
     this.row3Target.classList.remove('d-none')
+    this.row2Target.classList.add('d-none')
   }
 }

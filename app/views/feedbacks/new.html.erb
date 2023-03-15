@@ -1,8 +1,8 @@
 <div class='container' data-controller="feedback-form">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-      <div class="px-5 py-3 mt-5 mb-4 text-center">
-        <h2 class="text-center display-5 py-4 mb-0 title">Now it's feedback time!</h2>
+      <div class="px-5 my-5 text-center">
+        <h2 class="text-center pt-4 mb-0 title">Now it's feedback time!</h2>
       </div>
     </div>
   </div>
@@ -12,7 +12,7 @@
   <%= simple_form_for [@videocall, @feedback] do |f| %>
     <div class="row justify-content-center d-none" data-feedback-form-target="row1">
       <div class="col-12 col-lg-6">
-        <div class="bg-white px-5 py-3 my-1 rounded border border-1 text-center">
+        <div class="bg-white px-5 py-3 mb-5 rounded border border-1 text-center">
           <div class='my-3'>
             <p>What was your overall impression?</p>
             <div class="rating">
@@ -74,7 +74,7 @@
 
     <div class="row justify-content-center d-none" data-feedback-form-target="row2">
       <div class="col-12 col-lg-6">
-        <div class="bg-white px-5 py-3 my-3 rounded border border-1 text-center">
+        <div class="bg-white px-5 py-3 mb-5 rounded border border-1 text-center">
           <div class='my-3'>
             <p>What about body language?</p>
             <div class="rating">
@@ -138,7 +138,7 @@
       <div class="col-12 col-lg-6">
         <div class="bg-white px-5 py-3 mb-5 rounded border border-1 text-center">
           <%= f.input :written_feedback ,label: "Please add here anything that could help them improve", label_html: {class: 'simple-form-font'} %>
-          <%= f.submit "SEND FEEDBACK", class: "btn btn-antje btn-primary btn-primary-antje" %>
+          <%= f.submit "SEND FEEDBACK", class: "btn btn-antje btn-secondary btn-secondary-antje" %>
         </div>
       </div>
     </div>
