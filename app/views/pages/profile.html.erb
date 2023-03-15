@@ -80,8 +80,12 @@
         <div class="card mb-5">
           <div class="card-text p-4 pb-4">
 
+
           <!-- rb work start, change to current in production //-->
           <%= turbo_frame_tag frame_id do %>
+          <% if current_user.work_experience.nil? && current_user.rich_work_experience.nil? %>
+            <span class="inactive">Click on "edit" button above this field to input your info</span>
+          <% end  %>
           <%= current_user.rich_work_experience %>
           <% end %>
           <!-- <p><%= User.first.work_experience %></p> //-->
@@ -103,8 +107,12 @@
         <div class="card mb-5">
           <div class="card-text p-4 pb-4">
 
+
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
+          <% if current_user.education.nil? && current_user.rich_education.nil? %>
+            <span class="inactive">Click on "edit" button above this field to input your info</span>
+          <% end  %>
           <%= current_user.rich_education %>
           <% end %>
           <!-- rb education end //-->
@@ -123,8 +131,12 @@
         <div class="card mb-5">
           <div class="card-text p-4 pb-4">
 
+
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
+          <% if current_user.extra_info.nil? && current_user.rich_extra_info.nil? %>
+            <span class="inactive">Click on "edit" button above this field to input your info</span>
+          <% end  %>
           <%= current_user.rich_extra_info %>
           <% end %>
           <!-- rb education end //-->

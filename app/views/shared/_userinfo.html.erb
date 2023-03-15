@@ -7,6 +7,9 @@
       <% frame_id = dom_id(current_user, "edit_first_name") %>
       <%= turbo_frame_tag "edit_first_name" do %>
         <%= turbo_frame_tag frame_id do %>
+        <% if current_user.first_name.nil? %>
+            <span class="inactive">Click on "edit" to<br> add your name</span>
+          <% end  %>
           <h3><%= current_user.first_name %></h3>
 
         <% end %>
