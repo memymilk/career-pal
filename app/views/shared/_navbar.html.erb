@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "Home", root_path() , class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Dashboard", profile_path() , class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -26,7 +29,7 @@
                 <label class="toggle" for="toggle-switch" data-action="click->toggle-switch#switchBtn">
                   <input type="checkbox" id="toggle-switch" data-toggle-switch-target="button" data-bs-toggle="modal" data-bs-target="#modal">
                   <span class="slider"></span>
-                  <span class="labels" data-on="Ready For Call" data-off="Not ready for call"></span>
+                  <span class="labels" data-on="Ready for call" data-off="Not ready for call"></span>
                 </label>
               </form>
 

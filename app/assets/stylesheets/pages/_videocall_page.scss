@@ -7,6 +7,26 @@
   #twilio-remote-video {
     position: relative;
   }
+  .video {
+    _border: 1px solid #dee2e6;
+    _border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #twilio-remote-video > video {
+    width: 100%;
+    padding: 0 12px 0;
+  }
+
+  #twilio-remote-video video:first-of-type{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
   .twilio-remote-name {
     position: absolute;
     bottom: 16px;
@@ -29,17 +49,7 @@
       font-size: 1.2em;
     }
   }
-  #twilio-remote-video > video {
-    width: 100%;
-    padding: 0 12px 0;
-  }
-  
-  .video {
-    _border: 1px solid #dee2e6;
-    _border-radius: 3px;
-    display: flex;
-    flex-wrap: wrap;
-  }
+
   .nav-tabs {
     _border-bottom: 0;
   }
@@ -81,5 +91,8 @@
     background-image: url("accordion_icon_folded.svg");
     background-size: 40%;
     background-position: center;
+  }
+  code {
+    color: $teal;
   }
 }

@@ -22,7 +22,7 @@ export default class extends Controller {
       this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
-      this.nameTarget.classList.remove('d-none')
+      // this.nameTarget.classList.remove('d-none')
     });
   }
 
