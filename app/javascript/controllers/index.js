@@ -4,7 +4,6 @@
 
 import { application } from "./application"
 
-
 import ChartController from "./chart_controller"
 application.register("chart", ChartController)
 
@@ -26,6 +25,8 @@ application.register("toggle-switch", ToggleSwitchController)
 import TwilioController from "./twilio_controller"
 application.register("twilio", TwilioController)
 
+import VideoCallSubscriptionController from "./video_call_subscription_controller"
+application.register("video-call-subscription", VideoCallSubscriptionController)
+
 import VideocardController from "./videocard_controller"
 application.register("videocard", VideocardController)
-
