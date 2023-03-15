@@ -118,11 +118,11 @@
           </div><!--END .tab-content-->
 
           <div class="chat-btns-btm d-flex mt-3">
-            <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-countdown-timer-target="button">Switch Roles</button>
-            <%= link_to "End Call", new_videocall_feedback_path(@videocall), class:"btn btn-outline-secondary btn-outline-secondary-antje mt-3" %>
+            <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Switch Roles</button>
+            <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje mt-3" data-bs-toggle="modal" data-bs-target="#endCallModal">End Call</button>
           </div>
 
-          <!-- hidden Modal - for switch roles -->
+             <!-- hidden Modal - for switch roles -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -134,6 +134,23 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" data-bs-dismiss="modal" data-action="click->countdown-timer#restartTimer">Yes Yo!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- hidden Modal - for end call -->
+            <div class="modal fade" id="endCallModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="endCallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="endCallModalLabel">Your Interview Is Over!</h5>
+                  </div>
+                  <div class="modal-body">
+                    Time to rate your Pal
+                  </div>
+                  <div class="modal-footer">
+                     <%= link_to "Give Feedback", new_videocall_feedback_path(@videocall), class:"btn btn-outline-secondary btn-outline-secondary-antje mt-3" %>
                   </div>
                 </div>
               </div>
