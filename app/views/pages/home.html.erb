@@ -90,7 +90,7 @@
 
 
       <div class="col-md-3">
-        <div class="card blog-article-card mb-5">
+        <div class="card blog-article-card mb-5 grow">
           <img class="card-img-top" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Teamwork makes the dream work</h5>
@@ -101,7 +101,7 @@
       </div>
 
       <div class="col-md-3">
-        <div class="card blog-article-card mb-5">
+        <div class="card blog-article-card mb-5 grow">
           <img class="card-img-top" src=https://images.unsplash.com/photo-1498712938623-d2bee166c195?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLWxpa2VkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">The surprising secret to landing your dream job</h5>
@@ -112,7 +112,7 @@
       </div>
 
       <div class="col-md-3">
-        <div class="card blog-article-card mb-5">
+        <div class="card blog-article-card mb-5 grow">
           <img class="card-img-top" src="https://images.unsplash.com/photo-1459499362902-55a20553e082?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1910&q=80" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">How To Overcome Anxiety for interviews</h5>
@@ -123,7 +123,7 @@
       </div>
 
       <div class="col-md-3">
-        <div class="card blog-article-card mb-5">
+        <div class="card blog-article-card mb-5 grow">
           <img class="card-img-top" src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">What skills should I put on my CV?</h5>
@@ -168,7 +168,7 @@
 
       <!--card-->
       <div class="col-lg-3 col-md-6 mb-5">
-        <div class="card h-100">
+        <div class="card h-100 grow">
           <div class="card-body">
             <img src="https://avatars.githubusercontent.com/u/122166852?v=4" alt="" class="img-fluid rounded-circle w-50 mb-3">
             <h3>Lukas</h3>
@@ -192,7 +192,7 @@
 
       <!--card-->
       <div class="col-lg-3 col-md-6 mb-5">
-        <div class="card h-100">
+        <div class="card h-100 grow">
           <div class="card-body">
             <img src="https://avatars.githubusercontent.com/u/58730400?v=4" alt="Marina" class="img-fluid rounded-circle w-50 mb-3">
             <h3>Marina</h3>
@@ -216,7 +216,7 @@
 
       <!--card-->
       <div class="col-lg-3 col-md-6 mb-5">
-        <div class="card h-100">
+        <div class="card h-100 grow">
           <div class="card-body">
             <img src="https://avatars.githubusercontent.com/u/118263535?v=4" alt="" class="img-fluid rounded-circle w-50 mb-3">
             <h3>Giulia</h3>
@@ -240,7 +240,7 @@
 
       <!--card-->
       <div class="col-lg-3 col-md-6 mb-5">
-        <div class="card h-100">
+        <div class="card h-100 grow">
           <div class="card-body">
             <img src="https://avatars.githubusercontent.com/u/68593523?v=4" alt="" class="img-fluid rounded-circle w-50 mb-3">
             <h3>Antje</h3>
@@ -264,43 +264,4 @@
     </div>
   </div>
 </section>
-
-<section id="footer" class="bg-primary">
-  <div class="container d-flex justify-content-center">
-    <div class="row justify-content-center text-center my-auto">
-      <div class="col-md-6">
-      <h1 class="display-3">Sign Up</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ullam at natus obcaecati, rem qui facilis quae doloribus repellendus a.</p>
-        <%= simple_form_for(@user, as: :user, url: registration_path(:user)) do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :email,
-                        required: true,
-                        autofocus: false,
-                        input_html: { autocomplete: "email" },
-                        placeholder: 'Email',
-                        label: false
-                        %>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{6} characters minimum" if 6),
-                        input_html: { autocomplete: "new-password" },
-                        placeholder: 'Password',
-                        label: false
-                        %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        placeholder: 'Confirm password',
-                        label: false
-                        %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn btn-antje btn-secondary btn-secondary-antje btn-lg" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render "newsletter" %>
