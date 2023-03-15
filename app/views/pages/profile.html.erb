@@ -54,9 +54,9 @@
 
      <!-- Tab2: history //-->
      <% if current_user.feedbacks_as_receiver.present? %>
-      <h4 class="mt-5 ms-3">You have nailed <%= current_user.feedbacks_as_receiver.length %> interviews so far, way to go!</h4>
+      <h5 class="mt-5 ms-3">You have nailed <%= current_user.feedbacks_as_receiver.length %> interviews so far, way to go!</h5>
       <% else %>
-      <h4 class="mt-5 ms-3">Time to start practicing, make your mum proud!</h4>
+      <h5 class="mt-5 ms-3">Time to start practicing, make your mum proud!</h5>
       <% end %>
       <br>
       <!-- looped card creation //-->
