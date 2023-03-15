@@ -25,7 +25,7 @@
       <% end %>
        <!-- Tab1: dashboard //-->
       <div class="space-between">
-        <div><h3 class="mt-5 ms-3 mb-3"><%= image_tag "stats.svg", class:"me-2" %> Your stats</h3>
+        <div><h3 class="mt-5 ms-3 mb-3"><%= image_tag "stats.svg", class:"me-2" %> My stats</h3>
       </div>
         <div style="display:flex" class="me-3"><h3 class="mt-5 ms-3">Total calls: <%= current_user.feedbacks_as_receiver.length %> </h3>  <%= image_tag "calls.svg", class:"call-image me-3 ms-3" %></div>
       </div>
@@ -37,7 +37,7 @@
         <!-- average stars  //-->
         <%= render "feedbacks/average_dashboard" %>
         <!-- average stars closes  //-->
-          <h5 class="mt-5 ms-2">Same as a graph:</h5>
+          <h5 class="mt-5 ms-2">Graph</h5>
           <hr>
         <!-- graph  //-->
           <div class="dashboard-chart"><canvas data-chart-target="acquisitions" id="acquisitions"></canvas></div>
