@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @user = User.new
-    redirect_to profile_path if user_signed_in?
+    # redirect_to profile_path if user_signed_in?
   end
 
   def user_show
@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   end
 
   def update_education
-    current_user.update(education: params.dig(:user, :education))
+    current_user.update(rich_education: params.dig(:user, :rich_education))
     redirect_to show_education_path
   end
 
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
   end
 
   def update_work_experience
-    current_user.update(work_experience: params.dig(:user, :work_experience))
+    current_user.update(rich_work_experience: params.dig(:user, :rich_work_experience))
     redirect_to show_work_experience_path
   end
 
@@ -63,7 +63,7 @@ class PagesController < ApplicationController
   end
 
   def update_extra_info
-    current_user.update(extra_info: params.dig(:user, :extra_info))
+    current_user.update(rich_extra_info: params.dig(:user, :rich_extra_info))
     redirect_to show_extra_info_path
   end
 

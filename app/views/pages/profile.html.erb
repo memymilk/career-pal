@@ -1,4 +1,4 @@
-<div class="profile-container mt-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
+<div class="profile-container mt-5 mb-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
   <div class="dashboard-head">
     <div><%= render "shared/userinfo" %></div>
     <div><%= render "shared/readiness_card" %></div>
@@ -78,11 +78,11 @@
           <% end %>
         </div>
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb work start, change to current in production //-->
           <%= turbo_frame_tag frame_id do %>
-          <p><%= current_user.work_experience %></p>
+          <%= current_user.rich_work_experience %>
           <% end %>
           <!-- <p><%= User.first.work_experience %></p> //-->
 
@@ -101,11 +101,11 @@
         </div>
 
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-          <p> <%= current_user.education %> </p>
+          <%= current_user.rich_education %>
           <% end %>
           <!-- rb education end //-->
 
@@ -121,11 +121,11 @@
           <% end %>
         </div>
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-          <p><%= current_user.extra_info %></p>
+          <%= current_user.rich_extra_info %>
           <% end %>
           <!-- rb education end //-->
 
@@ -136,3 +136,24 @@
     </div>
   </div>
 </div>
+
+
+ <!-- Modal -->
+              <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="modalLabel">We have found your Pal!</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" data-action="click->toggle-switch#deactivateBtn"></button>
+                    </div>
+                    <div class="modal-body">
+                    Are your ready to start the call?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje" data-action="click->toggle-switch#deactivateBtn" data-bs-dismiss="modal">Close</button>
+                      <%= link_to 'Start Video Call', new_videocall_path, class:"btn btn-secondary btn-secondary-antje" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

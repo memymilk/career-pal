@@ -5,10 +5,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Overall impression: <%= @scores[:overall_impression].round(2) %>
+      Overall impression
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:overall_impression].round(2)   %>
+      <%= render "feedbacks/star_rating", amount: @scores[:overall_impression].round(2) %> <span class ="ms-4 tip"><%= @scores[:overall_impression].round(2) %></span>
     </div>
     <div class="col">
     <span class="tip"><%= @text_overall %></span>
@@ -23,10 +23,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Eye contact: <%= @scores[:eye_contact].round(2) %>
+      Eye contact
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:eye_contact].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:eye_contact].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:eye_contact].round(2) %> </span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_eye_contact %></span>
@@ -41,10 +41,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Professional appearance: <%= @scores[:professional_appearance].round(2) %>
+      Professional appearance
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:professional_appearance].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:professional_appearance].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:professional_appearance].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_professional_appearance %></span>
@@ -59,10 +59,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Body language: <%= @scores[:body_language].round(2) %>
+      Body language
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:body_language].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:body_language].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:body_language].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_body_language %></span>
@@ -78,10 +78,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Verbal communication: <%= @scores[:verbal_communication].round(2) %>
+      Verbal communication
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:verbal_communication].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:verbal_communication].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:verbal_communication].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_verbal_communication %></span>
@@ -99,10 +99,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Your background presentation: <%= @scores[:background_presentation].round(2) %>
+      Your background presentation
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:background_presentation].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:background_presentation].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:background_presentation].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_background_presentation %></span>
@@ -117,10 +117,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Enthusiasm: <%= @scores[:enthusiasm].round(2) %>
+      Enthusiasm
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:enthusiasm].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:enthusiasm].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:enthusiasm].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_enthusiasm %></span>
@@ -135,10 +135,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Hireability: <%= @scores[:hireability].round(2) %>
+      Hireability
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:hireability].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:hireability].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:hireability].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_hireability %></span>
@@ -153,10 +153,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Problem Solving skills: <%= @scores[:problem_solving].round(2) %>
+      Problem Solving skills
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:problem_solving].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:problem_solving].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:problem_solving].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_problem_solving %></span>
@@ -170,10 +170,10 @@
   <div class="row align-items-end">
       <div class="col-4">
 
-      Confidence: <%= @scores[:confidence].round(2) %>
+      Confidence
     </div>
     <div class="col-3">
-      <%= render "feedbacks/star_rating", amount: @scores[:confidence].round(2)  %>
+      <%= render "feedbacks/star_rating", amount: @scores[:confidence].round(2)  %> <span class ="ms-4 tip"> <%= @scores[:confidence].round(2) %></span>
     </div>
     <div class="col">
      <span class="tip"> <%= @text_confidence %></span>

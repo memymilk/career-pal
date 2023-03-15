@@ -2,9 +2,9 @@
 
 <%= turbo_frame_tag frame_id do %>
   <%= simple_form_for current_user, url: update_profile_work_experience_path, data: {turbo_method: :patch} do |f| %>
-    <div class="d-flex" style="align-items:center">
-      <%= f.input :work_experience, label: false, wrapper_html: {class: "flex-grow-1"} %>
-      <%= f.submit "Update", class: "btn btn-secondary ms-2 mb-3" %>
+    <div style="align-items:center">
+      <%= f.rich_text_area :rich_work_experience, label: false, wrapper_html: {class: "flex-grow-1"} %>
+      <%= f.submit "Update", class: "btn btn-secondary mt-2 mb-3" %>
     </div>
   <% end %>
 <% end %>
