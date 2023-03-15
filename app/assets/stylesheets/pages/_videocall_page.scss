@@ -80,6 +80,8 @@
   }
   li {
     line-height: 2.2em;
+    font-size: 0.95em;
+    letter-spacing: 0.01em;
   }
   .time-suggs {
     color: $purple-100;
@@ -87,10 +89,22 @@
     float: right;
     margin-top: 0.75em;
   }
-  .accordion-button::after {
-    background-image: url("accordion_icon_folded.svg");
-    background-size: 40%;
-    background-position: center;
+  #accordionExample {
+    .accordion-header {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1em;
+      font-weight: 300;
+      color: #514A6B;
+    }
+    .accordion-button::after {
+      background-size: 40%;
+      background-position: center;
+    }
+    button {
+      color: #514A6B;
+      letter-spacing: -0.01em;
+      font-size: 0.95em;
+    }
   }
   code {
     color: $teal;
