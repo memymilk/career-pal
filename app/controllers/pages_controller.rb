@@ -89,9 +89,9 @@ class PagesController < ApplicationController
         "Nailing it!"
       elsif params < 4 && params >= 3.7
         "Way to go, yout mum can be proud"
-      elsif params < 3.7 && params >= 3
+      elsif params < 3.7 && params >= 3.2
         "You are on the right track, almost there"
-      elsif params < 3 && params >= 2.5
+      elsif params < 3.2 && params >= 2.5
         "A bit more love for this"
       elsif params < 2.5 && params >= 2
         "Hmm a bit more attention here"
