@@ -1,4 +1,4 @@
-<div class="profile-container mt-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
+<div class="profile-container mt-5 mb-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
   <div class="dashboard-head">
     <div><%= render "shared/userinfo" %></div>
     <div><%= render "shared/readiness_card" %></div>
@@ -78,11 +78,11 @@
           <% end %>
         </div>
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb work start, change to current in production //-->
           <%= turbo_frame_tag frame_id do %>
-          <p><%= current_user.work_experience %></p>
+          <%= current_user.rich_work_experience %>
           <% end %>
           <!-- <p><%= User.first.work_experience %></p> //-->
 
@@ -101,11 +101,11 @@
         </div>
 
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-          <p> <%= current_user.education %> </p>
+          <%= current_user.rich_education %>
           <% end %>
           <!-- rb education end //-->
 
@@ -121,11 +121,11 @@
           <% end %>
         </div>
         <div class="card mb-5">
-          <div class="card-text p-4 pb-1">
+          <div class="card-text p-4 pb-4">
 
           <!-- rb education start //-->
           <%= turbo_frame_tag frame_id do %>
-          <p><%= current_user.extra_info %></p>
+          <%= current_user.rich_extra_info %>
           <% end %>
           <!-- rb education end //-->
 
