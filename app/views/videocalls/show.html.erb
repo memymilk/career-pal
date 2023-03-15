@@ -19,9 +19,10 @@
           </span>
         </div>
       </div>
+
       <div class="col-md-5 my-3 position-relative">
 
-        <nav>
+
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-question-tab" data-bs-toggle="tab" data-bs-target="#nav-question" type="button" role="tab" aria-controls="nav-question" aria-selected="true">Questions</button>
             <button class="nav-link" id="nav-career-tab" data-bs-toggle="tab" data-bs-target="#nav-career" type="button" role="tab" aria-controls="nav-career" aria-selected="false">Career</button>
@@ -107,12 +108,21 @@
             <!--data-video-call-subscription-target ACTION CABLE-->
             <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab" data-video-call-subscription-target="tab">
             <!--Content _other_user-->
+            <% if @videocall.user_two.present? %>
+             <%= render "other_user", user: current_user == @videocall.user_two ? @videocall.user_one : @videocall.user_two %>
+            <% else %>
+              <p>Nobody has joined this call yet‚</p>
+            <% end %>
+            </div>
+
           </div>
+
           <div class="chat-btns-btm d-flex mt-3">
             <%= link_to "Switch Roles", new_videocall_feedback_path(@videocall), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" %>
             <%= link_to "Leave Feedback", new_videocall_feedback_path(@videocall), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
           </div>
+
       </div>
-    </div>
-  </div>
+    </div><!--END .row-->
+  </div><!--END .container-->
 </section>
