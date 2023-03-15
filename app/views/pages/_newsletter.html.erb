@@ -1,0 +1,40 @@
+<section id="footer" class="bg-primary">
+  <div class="container d-flex justify-content-center">
+    <div class="row justify-content-center text-center my-auto">
+      <div class="col-md-6">
+      <h1 class="display-3">Newsletter</h1>
+      <p class="mb-0">Do you want to receive regular tips and tricks on acing your interviews and landing your dream job? Simply sign up to our weekly newsletter. </p>
+      <p> We won't send spam - CareerPal swear!</p>
+        <%= simple_form_for(@user, as: :user, url: registration_path(:user)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: false,
+                        input_html: { autocomplete: "email" },
+                        placeholder: 'Email',
+                        label: false
+                        %>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{6} characters minimum" if 6),
+                        input_html: { autocomplete: "new-password" },
+                        placeholder: 'Password',
+                        label: false
+                        %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        placeholder: 'Confirm password',
+                        label: false
+                        %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn btn-text-large w-50 btn-antje-lg btn-secondary btn-secondary-antje btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
