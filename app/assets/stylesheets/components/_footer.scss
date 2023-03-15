@@ -29,7 +29,6 @@
 //   color: #D23333;
 
 // }
-
 footer {
   background-color: #f2f2f2;
   padding: 20px;
@@ -38,10 +37,15 @@ footer {
   align-items: center;
 }
 
+.left {
+  width: 50%;
+}
+
 .left a {
-  color: #555;
+  color: #D9D2E2;
   text-decoration: none;
   margin-right: 10px;
+  display: inline-block;
 }
 
 .right p {
