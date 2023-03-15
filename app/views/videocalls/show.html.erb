@@ -1,7 +1,7 @@
 <!--data-controller="video-call-subscription" data-video-call-subscription-video-call-id-value="" ACTION CABLE-->
 <section id="video-section" data-controller="video-call-subscription" data-video-call-subscription-video-call-id-value="<%= @videocall.id %>">
 
-  <div class="container">
+  <div class="container" data-controller="countdown-timer">
     <!--Countdown
     <div class="row col text-center countown">
     <h5 class="text-primary mt-3"> Time left to switch roles</h5>
@@ -15,7 +15,7 @@
             <span><!--Name--></span>
           </span>
           <span class="timer" >
-            <span id="timer" data-controller="countdown-timer" data-countdown-timer-target="time">30:00</span>
+            <span id="timer" data-countdown-timer-target="time">30:00</span>
           </span>
         </div>
       </div>
@@ -107,22 +107,39 @@
             <!--Career Tab-->
             <!--data-video-call-subscription-target ACTION CABLE-->
             <div class="tab-pane fade" id="nav-career" role="tabpanel" aria-labelledby="nav-career-tab" data-video-call-subscription-target="tab">
-            <!--Content _other_user-->
-            <% if @videocall.user_two.present? %>
-             <%= render "other_user", user: current_user == @videocall.user_two ? @videocall.user_one : @videocall.user_two %>
-            <% else %>
-              <p>Nobody has joined this call yet‚</p>
-            <% end %>
+              <!--Content _other_user-->
+              <% if @videocall.user_two.present? %>
+              <%= render "other_user", user: current_user == @videocall.user_two ? @videocall.user_one : @videocall.user_two %>
+              <% else %>
+                <p>Nobody has joined this call yet.</p>
+              <% end %>
             </div>
 
-          </div>
+          </div><!--END .tab-content-->
 
           <div class="chat-btns-btm d-flex mt-3">
-            <%= link_to "Switch Roles", new_videocall_feedback_path(@videocall), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" %>
-            <%= link_to "Leave Feedback", new_videocall_feedback_path(@videocall), class:"btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" %>
+            <button type="button" class="btn btn-outline-secondary btn-outline-secondary-antje mt-3 mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-countdown-timer-target="button">Switch Roles</button>
+            <%= link_to "End Call", new_videocall_feedback_path(@videocall), class:"btn btn-outline-secondary btn-outline-secondary-antje mt-3" %>
           </div>
 
-      </div>
+          <!-- hidden Modal - for switch roles -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Time To Switch Roles!</h5>
+                  </div>
+                  <div class="modal-body">
+                    You are going to be the interviewer now.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-antje btn-outline-secondary btn-outline-secondary-antje mt-3" data-bs-dismiss="modal" data-action="click->countdown-timer#restartTimer">Yes Yo!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </div><!--END .col-md-5-->
     </div><!--END .row-->
   </div><!--END .container-->
 </section>
