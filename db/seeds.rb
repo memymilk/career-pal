@@ -64,7 +64,7 @@ User.create!(
     videocall_id: Videocall.all.sample.id,
     giver_id: User.all.sample.id,
     overall_impression: Faker::Number.within(range: 1..5),
-    eye_contact: Faker::Number.within(range: 4..5),
+    eye_contact: Faker::Number.within(range: 1..3),
     background_presentation: Faker::Number.within(range: 1..5),
     problem_solving: Faker::Number.within(range: 4..5),
     verbal_communication: Faker::Number.within(range: 1..5),

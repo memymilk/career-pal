@@ -2,17 +2,25 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = ["time", "button"];
+  // timer value true or false
+  static values = {
+    shouldStart: Boolean
+  }
 
   connect() {
 
     // if 2nd video is loaded
     // restart when switchRolesBtn is pressed
     // if 2nd countdown is done - end call/ go to feedback
-
-   this.startTimer()
+   if (this.shouldStartValue) {
+    this.startTimer()
+   } else {
+    this.timeTarget.classList.add("d-none")
+   }
   }
 
   startTimer() {
+    this.timeTarget.classList.remove("d-none")
     this.startTime = new Date();
     this.endTime = new Date(this.startTime.getTime() + 30 * 60 * 1000); // 30 minutes in milliseconds
     this.timer = setInterval(() => {
@@ -35,5 +43,12 @@ export default class extends Controller {
     console.log("restartTimer")
     clearInterval(this.timer)
     this.startTimer()
+  }
+
+  shouldStartValueChanged() {
+    if (this.shouldStartValue) {
+      this.timeTarget.classList.remove("d-none")
+      this.startTimer()
+     }
   }
 }
