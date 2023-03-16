@@ -1,4 +1,6 @@
-<% current_user.feedbacks_as_receiver.each do |feedback|  %>
+<% new_array =  current_user.feedbacks_as_receiver %>
+<% new_array = new_array.sort_by {|obj| obj.created_at}.reverse %>
+<% new_array.each do |feedback|  %>
   <div class="card mb-3 feedback grow-feedback deletion" class="media-body">
     <div class="card-title ps-4 pe-4 pt-4">
       <h5 style="margin-bottom:0px!important">
