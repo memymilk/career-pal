@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
 
 export default class extends Controller {
-  static targets = ["tab"]
+  static targets = ["tab", "video", "countdown"]
   static values = { videoCallId: Number }
 
   connect() {
@@ -13,6 +13,8 @@ export default class extends Controller {
         received: (data) => {
           console.log(data)
           this.tabTarget.innerHTML = data
+          this.videoTarget.classList.add("second-video-true")
+          this.countdownTarget.dataset.countdownTimerShouldStartValue = true
        }
       }
     )

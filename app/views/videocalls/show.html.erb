@@ -1,7 +1,6 @@
 <!--data-controller="video-call-subscription" data-video-call-subscription-video-call-id-value="" ACTION CABLE-->
 <section id="video-section" data-controller="video-call-subscription" data-video-call-subscription-video-call-id-value="<%= @videocall.id %>">
-
-  <div class="container" data-controller="countdown-timer">
+  <div class="container" data-controller="countdown-timer" data-countdown-timer-should-start-value="<%= @videocall.user_two.present? %>" data-video-call-subscription-target="countdown">
     <!--Countdown
     <div class="row col text-center countown">
     <h5 class="text-primary mt-3"> Time left to switch roles</h5>
@@ -10,7 +9,7 @@
     <div class="row">
       <!--Video-->
       <div class="col-md-7 my-3 p-0">
-        <div class="video" id="twilio-remote-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv">
+        <div class="video <%= "second-video-true" if @videocall.user_two.present? %>" id="twilio-remote-video" data-controller="twilio" data-twilio-token-value="<%= @token %> " data-twilio-target="mediaDiv" data-video-call-subscription-target="video">
           <span class="twilio-remote-name" >
             <span><!--Name--></span>
           </span>
