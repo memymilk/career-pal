@@ -27,9 +27,18 @@ User.create!(
   extra_info: Faker::Quote.famous_last_words
 )
 
-8.times do
+user_me = User.create!(
+  email: "antje@gmail.com",
+  password: "123456",
+  first_name: "Antje",
+  last_name: "Stiller",
+  rich_education: "<strong>01/23 - 03/23</strong><br>Le Wagon, Fullstack Webdevelopment Course",
+  rich_work_experience: "<strong>01/22 - 12/22</strong><br>UX/UI Designer",
+  rich_extra_info: "Seeking to expand my horizons and engage in innovative collaborations."
+)
 
-  user_two = User.create!(
+8.times do
+    user_two = User.create!(
     email: Faker::Internet.email,
     password: "123456",
     first_name: Faker::Name.first_name,
