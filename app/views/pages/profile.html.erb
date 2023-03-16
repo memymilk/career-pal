@@ -1,4 +1,4 @@
-<div class="profile-container mt-5 mb-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>">
+<div class="profile-container mt-5 mb-5" data-controller="chart" data-chart-infodata-value="<%= @scores.values %>" data-chart-scatter-value="<%= @scatter.to_json %>" >
   <div class="dashboard-head">
     <div><%= render "shared/userinfo" %></div>
     <div><%= render "shared/readiness_card" %></div>
@@ -41,6 +41,8 @@
           <hr>
         <!-- graph  //-->
           <div class="dashboard-chart"><canvas data-chart-target="acquisitions" id="acquisitions"></canvas></div>
+          <div class="dashboard-chart"><canvas data-chart-target="scatter" id="scatter"></canvas></div>
+
           <%# <div class="dashboard-chart"><canvas data-chart-target="radar" id="radar"></canvas></div> %>
 
         <!-- graph ends  //-->

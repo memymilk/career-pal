@@ -7,21 +7,25 @@ export default class extends Controller {
   static values = {
     infodata: Array,
     feedback: Array,
+    scatter: Object
     // currentfeedback: Array
   }
 
-  static targets = ["acquisitions", "radar"]
+  static targets = ["acquisitions", "radar", "scatter"]
 
   connect() {
 
     if (this.hasAcquisitionsTarget){
     this.createChart()
+    this.createChartThree()
     }
 
     if (this.hasRadarTarget){
 
     this.createChartTwo()
     }
+
+
   }
 
   createChart() {
@@ -70,7 +74,8 @@ export default class extends Controller {
     )
 
   }
-// second chart
+
+  // second chart
 
   createChartTwo() {
     console.log("I have also been created yoyo")
@@ -139,4 +144,37 @@ export default class extends Controller {
     )
 
   }
+
+  // third chart
+
+
+  createChartThree() {
+    console.log("Number three here yo")
+    console.log(this.scatterValue)
+
+    const scatterDatasets = Object.entries(this.scatterValue).map(([ key, value ]) => {
+      return {
+        label: key,
+        data: value.map((data, index) => {
+          return {
+            y: data,
+            x: index,
+            r: data
+          }
+        })
+      }
+    })
+    console.log(scatterDatasets)
+
+    new Chart(this.scatterTarget, {
+      type: 'bubble',
+        options: {
+          aspectRatio: 1,
+        },
+        data: {
+          datasets: scatterDatasets
+        },
+    })
+  }
+
 }

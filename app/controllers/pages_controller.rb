@@ -27,6 +27,7 @@ class PagesController < ApplicationController
     @text_hireability = compare(@scores[:hireability])
     @text_confidence = compare(@scores[:confidence])
     @text_problem_solving = compare(@scores[:problem_solving])
+    points_per_category
   end
 
   # education_editing_below
@@ -78,6 +79,33 @@ class PagesController < ApplicationController
   def update_first_name
     current_user.update(first_name: params.dig(:user, :first_name))
     redirect_to show_first_name_path
+  end
+
+  def points_per_category
+    @scatter = {
+      overall_each: [],
+      eye_contact_each: [],
+      background_presentation_each: [],
+      verbal_communication_each: [],
+      body_language_each: [],
+      enthusiasm_each: [],
+      professional_appearance_each: [],
+      hireability_each: [],
+      confidence_each: [],
+      problem_solving_each: []
+    }
+    current_user.feedbacks_as_receiver.each do |feedback|
+      @scatter[:overall_each] << feedback[:overall_impression]
+      @scatter[:eye_contact_each] << feedback[:eye_contact]
+      @scatter[:background_presentation_each] << feedback[:background_presentation]
+      @scatter[:verbal_communication_each] << feedback[:verbal_communication]
+      @scatter[:body_language_each] << feedback[:body_language]
+      @scatter[:enthusiasm_each] << feedback[:enthusiasm]
+      @scatter[:professional_appearance_each] << feedback[:professional_appearance]
+      @scatter[:hireability_each] << feedback[:hireability]
+      @scatter[:confidence_each] << feedback[:confidence]
+      @scatter[:problem_solving_each] << feedback[:problem_solving]
+    end
   end
 
 

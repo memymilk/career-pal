@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :videocalls, class_name: "Videocall", foreign_key: :user_one, dependent: :destroy
   has_many :videocalls, class_name: "Videocall", foreign_key: :user_two, dependent: :destroy
   has_many :feedbacks_as_giver, class_name: "Feedback", foreign_key: :giver_id
+  # has_many :feedbacks_as_receiver, class_name: "Feedback", foreign_key: :receiver_id
   has_rich_text :rich_work_experience
   has_rich_text :rich_extra_info
   has_rich_text :rich_education
