@@ -9,7 +9,7 @@ export default class extends Controller {
     token: String,
   }
   connect() {
-    console.log("Hello",this.element, this.tokenValue);
+    // console.log("Hello",this.element, this.tokenValue);
     createLocalTracks({
       audio: true,
       video: {height: 1080, width: 1920},
@@ -22,7 +22,6 @@ export default class extends Controller {
       this.addLocalParticipant(room)
       this.addExistingParticipants(room)
       this.prepareFutureParticipants(room)
-      // this.nameTarget.classList.remove('d-none')
     });
   }
 
@@ -38,13 +37,13 @@ export default class extends Controller {
     room.on('participantConnected', participant => {
       this.addParticipantTracks(participant)
     });
+    // this.mediaDivTarget.classList.add("second-video-true")
   }
 
   addParticipantTracks(participant) {
     let i = 0
     participant.tracks.forEach(publication => {
       if (publication.track) {
-        console.log('wtf is this')
         this.mediaDivTarget.appendChild(publication.track.attach());
       }
     });
